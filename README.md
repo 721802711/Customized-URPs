@@ -13,10 +13,12 @@
   |------------|------------|------------|
   |  [00_HLSLShader](00_Base/Shader/00_HLSLShader.shader) | <img src="00_Base/00.png" width="75%">    | 基础Shader，只转换HLSL语法    |
   |  [01_HLSLShader](00_Base/Shader/01_HLSLShader.shader)   | <img src="00_Base/01.gif" width="75%">    | 基础Shader，增加关键字枚举类型切换   |
+  | | | | 
   |  [01_Lanbert](01_LightingModel/Shader/01_Lanbert.shader) | <img src="01_LightingModel/01_lanbert.png" width="75%"> | 漫反射渲染，兰伯特光照模型|
   |  [01_HalfLanbert](01_LightingModel/Shader/01_HalfLanbert.shader) | <img src="01_LightingModel/01_HalfLanbert.png" width="75%"> | 漫反射渲染，半兰伯特光照模型|
   |  [01_Phong](01_LightingModel/Shader/01_Phong.shader) | <img src="01_LightingModel/01_Phong.png" width="75%"> | 高光渲染， 冯光照模型|
   |  [01_BlinnPhong](01_LightingModel/Shader/01_BlinnPhong.shader) | <img src="01_LightingModel/01_BlinnPhong.png" width="75%"> | 高光模型， 布林-冯光照模型|
+  | | | | 
   | [02_BumpMap](02_Bump/Shader/02_BumpMap.shader) | <img src="02_Bump/02_BumpMap.png" width="75%"> | 凹凸渲染. 使用高度图渲染凹凸 | 
   | [02_DisplacementMapping](02_Bump/Shader/02_DisplacementMapping.shader)|  <img src="02_Bump/02_DisplacementMapping.png" width="75%">|  凹凸渲染.使用曲面细分根据高度图渲染凹凸 | 
   | [02_Normal](02_Bump/Shader/02_Normal.shader)|  <img src="02_Bump/02_Normal.png" width="75%">|  凹凸渲染. 使用法线贴图渲染凹凸| 
