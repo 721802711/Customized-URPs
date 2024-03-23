@@ -12,7 +12,7 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
-  - _PARALLAXMAP_DOWN
+  - _PARALLAXMAP_UP
   m_InvalidKeywords:
   - _PARALLAXMAP_DOWN3
   - _PARALLAXMAP_NEMO
@@ -34,6 +34,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Parallaxmap: 1
+    - _Parallaxmap: 0
     m_Colors: []
   m_BuildTextureStacks: []
