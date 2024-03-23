@@ -29,4 +29,7 @@
   | [03_02_SimpleParallaxWithOffsetLimit](03_Parallax/Shader/03_02_SimpleParallaxWithOffsetLimit.shader)|  <img src="03_Parallax/03_02_SimpleParallaxWithOffsetLimit.gif" width="75%"> | 带偏移量限制的视差贴图 | 
   | [03_03_SteepParallaxMapping](03_Parallax/Shader/03_03_SteepParallaxMapping.shader)|  <img src="03_Parallax/03_03_SteepParallaxMapping.gif" width="75%"> | 陡峭视差贴图 | 
   | [03_04_ReliefParallaxMapping](03_Parallax/Shader/03_04_ReliefParallaxMapping.shader)|  <img src="03_Parallax/03_04_ReliefParallaxMapping.gif" width="75%"> | 浮雕视差贴图 | 
-  | [03_05_POMParallaxOcclusionMapping](03_Parallax/Shader/03_05_POMParallaxOcclusionMapping.shader)|  <img src="03_Parallax/03_05_POMParallaxOcclusionMapping.gif" width="75%"> | 视差遮挡贴图| 
+  | [03_05_POMParallaxOcclusionMapping](03_Parallax/Shader/03_05_POMParallaxOcclusionMapping.shader)|  <img src="03_Parallax/03_05_POMParallaxOcclusionMapping.gif" width="75%"> | 视差遮挡贴图 | 
+  | [03_06_ParallaxOcclusionMappingNode](03_Parallax/Shader/03_06_ParallaxOcclusionMappingNode.shader)| <img src="03_Parallax/03_06_ParallaxOcclusionMappingNode.gif" width="75%"> | Unity默认效果 ，其中POM效果 | 
+  | [03_07_SteepParallaxWithShadow](03_Parallax/Shader/03_07_SteepParallaxWithShadow.shader)| <img src="03_Parallax/03_07_SteepParallaxWithShadow.gif" width="75%"> |   自阴影的视差贴图 | 
+  | [03_08_SteepParallaxWithSoftShadow](03_Parallax/Shader/03_08_SteepParallaxWithSoftShadow.shader)| <img src="03_Parallax/03_08_SteepParallaxWithSoftShadow.gif" width="75%"> | 优化阴影， 带自阴影的视差贴图 | 
