@@ -16,4 +16,4 @@
   |  [01_Lanbert](01_LightingModel/Shader/01_Lanbert.shader) | <img src="01_LightingModel/01_lanbert.png" width="75%"> | 漫反射渲染，兰伯特光照模型|
   |  [01_HalfLanbert](01_LightingModel/Shader/01_HalfLanbert.shader) | <img src="01_LightingModel/01_HalfLanbert.png" width="75%"> | 漫反射渲染，半兰伯特光照模型|
   |  [01_Phong](01_LightingModel/Shader/01_Phong.shader) | <img src="01_LightingModel/01_Phong.png" width="75%"> | 高光渲染， 冯光照模型|
-  |  [01_BlinnPhong](01_LightingModel/Shader/01_BlinnPhong.shader) | <img src="01_LightingModel/01_BlinnPhong.png" width="75%"> | 高光模型， |
+  |  [01_BlinnPhong](01_LightingModel/Shader/01_BlinnPhong.shader) | <img src="01_LightingModel/01_BlinnPhong.png" width="75%"> | 高光模型， 布林-冯光照模型|
