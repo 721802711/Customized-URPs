@@ -18,7 +18,7 @@ Shader "B/04_03_MultipleLitgts"
 
         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
         #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
-
+        #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Shadows.hlsl"
 
         struct appdata
         {
@@ -59,6 +59,7 @@ Shader "B/04_03_MultipleLitgts"
             #pragma multi_compile _ _MAIN_LIGHT_SHADOWS                    //接受阴影
             #pragma multi_compile _ _MAIN_LIGHT_SHADOWS_CASCADE            //产生阴影
             #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS   // 多光源
+            #pragma multi_compile_fragment _ _ADDITIONAL_LIGHT_SHADOWS
             #pragma multi_compile _ _SHADOWS_SOFT                         //软阴影
 
             #pragma shader_feature  _ADDLIGHTS_INDIVIDUAL _ADDLIGHTS_MANY
@@ -85,7 +86,7 @@ Shader "B/04_03_MultipleLitgts"
             {
 
                 // 漫反射                   
-                half3 diffuse = Lambert(lightColor, lightDir, normalWS) * _DiffuseColor.rgb;
+                half3 diffuse = Lambert(lightColor, lightDir, normalWS) * lightAttenuation * _DiffuseColor.rgb;
 
                 // 高光计算
                 half smoothness = exp2(10 * _smoothness + 1);
@@ -151,7 +152,7 @@ Shader "B/04_03_MultipleLitgts"
             
 
                 Light mylight = GetMainLight(TransformWorldToShadowCoord(i.positionWS.xyz));                                // 获取场景主光源
-                
+
                 half3 ViewDir = normalize(i.viewDirWS);                       //归一化视角方向
                 half3 NormalDir = normalize(i.normalWS);                      
 
@@ -180,6 +181,7 @@ Shader "B/04_03_MultipleLitgts"
             }
             ENDHLSL
         }
+
 
         Pass
         {
