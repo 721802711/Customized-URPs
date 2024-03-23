@@ -21,3 +21,9 @@
   | [02_DisplacementMapping](02_Bump/Shader/02_DisplacementMapping.shader)|  <img src="02_Bump/02_DisplacementMapping.png" width="75%">|  凹凸渲染.使用曲面细分根据高度图渲染凹凸 | 
   | [02_Normal](02_Bump/Shader/02_Normal.shader)|  <img src="02_Bump/02_Normal.png" width="75%">|  凹凸渲染. 使用法线贴图渲染凹凸| 
   | [02_ParallaxOcclusion](02_Bump/Shader/02_ParallaxOcclusion.shader)|  <img src="02_Bump/02_ParallaxOcclusion.png" width="75%">| 凹凸渲染. 使用视差渲染凹凸 | 
+  | [03_00_SimpleParallax](03_Parallax/Shader/03_00_SimpleParallax.shader)|  <img src="03_Parallax/03_00_SimpleParallax.gif" width="75%"> | | 
+  | [03_01_ParallaxMapping](03_Parallax/Shader/03_01_ParallaxMapping.shader)|  <img src="03_Parallax/03_01_ParallaxMapping.gif" width="75%"> | | 
+  | [03_02_SimpleParallaxWithOffsetLimit](03_Parallax/Shader/03_02_SimpleParallaxWithOffsetLimit.shader)|  <img src="03_Parallax/03_02_SimpleParallaxWithOffsetLimit.gif" width="75%"> | | 
+  | [03_03_SteepParallaxMapping](03_Parallax/Shader/03_03_SteepParallaxMapping.shader)|  <img src="03_Parallax/03_03_SteepParallaxMapping.gif" width="75%"> | | 
+  | [03_04_ReliefParallaxMapping](03_Parallax/Shader/03_04_ReliefParallaxMapping.shader)|  <img src="03_Parallax/03_04_ReliefParallaxMapping.gif" width="75%"> | | 
+  | [03_05_POMParallaxOcclusionMapping](03_Parallax/Shader/03_05_POMParallaxOcclusionMapping.shader)|  <img src="03_Parallax/03_05_POMParallaxOcclusionMapping.gif" width="75%"> | | 
