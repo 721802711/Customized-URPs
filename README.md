@@ -11,5 +11,5 @@
 
   | 名称      | 效果     | 描述       |
   |------------|------------|------------|
-  |  00_HLSLShader | <img src="00_Base/00.png" width="50%">    | 基础Shader，只转换HLSL语法    |
-  |  01_HLSLShader   | <img src="00_Base/01.gif" width="50%">    | 基础Shader，增加关键字枚举类型切换   |
+  |  00_HLSLShader | <img src="00_Base/00.png" width="75%">    | 基础Shader，只转换HLSL语法    |
+  |  01_HLSLShader   | <img src="00_Base/01.gif" width="75%">    | 基础Shader，增加关键字枚举类型切换   |
