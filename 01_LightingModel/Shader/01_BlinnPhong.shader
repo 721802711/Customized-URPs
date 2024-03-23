@@ -3,7 +3,8 @@ Shader "B/01_BlinnPhong"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _gloss("_gloss",Float) = 0.2
+        _gloss("_gloss",Range(0, 1)) = 1
+
     }
     SubShader
     {
@@ -75,12 +76,15 @@ Shader "B/01_BlinnPhong"
 
                 half3 ambient = half3(unity_SHAr.w, unity_SHAg.w, unity_SHAb.w);   // 环境光 
 
-                half3 specularValue = pow(max(0,dot(ReflectDir,ViewDir)),_gloss) * LightColor.rgb;   // 高光
+                half smoothness = exp2(10 * _gloss + 1);
+                half3 specularValue = pow(max(0,dot(ReflectDir,ViewDir)),smoothness) * LightColor.rgb;   // 高光
                 half3 diffusecolor = DiffuseTex * LdotN * LightColor;
-                half4 col =  half4(specularValue + diffusecolor + ambient, 1.0);
+
+                half3 color =  specularValue + diffusecolor + ambient;
+                half alpha = 1;
 
 
-                return col;
+                return half4(color.rgb,alpha);
             }
             ENDHLSL
         }

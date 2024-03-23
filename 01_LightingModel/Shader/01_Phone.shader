@@ -3,7 +3,7 @@ Shader "B/01_Phone"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-        _gloss("_gloss",Float) = 0.2
+        _gloss("_gloss",Range(0, 1)) = 1
     }
     SubShader
     {
@@ -73,14 +73,16 @@ Shader "B/01_Phone"
 
                 float LdotN = dot(LightDir,NormalDir) * 0.5 + 0.5;              //LdotN
 
-
-                half4 specularValue = pow(max(0,dot(ReflectDir,ViewDir)),_gloss) * LightColor;   //计算高光
+                half smoothness = exp2(10 * _gloss + 1);
+                half4 specularValue = pow(max(0,dot(ReflectDir,ViewDir)),smoothness) * LightColor;   //计算高光
                 half4 diffusecolor = DiffuseTex * LdotN * LightColor;
-                half4 col =  specularValue + diffusecolor;
+                half3 ambient = half3(unity_SHAr.w, unity_SHAg.w, unity_SHAb.w);   // 环境光 
+
+                half3 color =  specularValue + diffusecolor + ambient;
+                half alpha = 1;
 
 
-
-                return col;
+                return half4(color.rgb,alpha);
             }
             ENDHLSL
         }
