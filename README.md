@@ -33,3 +33,4 @@
   | [03_06_ParallaxOcclusionMappingNode](03_Parallax/Shader/03_06_ParallaxOcclusionMappingNode.shader)| <img src="03_Parallax/03_06_ParallaxOcclusionMappingNode.gif" width="75%"> | Unity默认效果 ，其中POM效果 | 
   | [03_07_SteepParallaxWithShadow](03_Parallax/Shader/03_07_SteepParallaxWithShadow.shader)| <img src="03_Parallax/03_07_SteepParallaxWithShadow.gif" width="75%"> |   自阴影的视差贴图 | 
   | [03_08_SteepParallaxWithSoftShadow](03_Parallax/Shader/03_08_SteepParallaxWithSoftShadow.shader)| <img src="03_Parallax/03_08_SteepParallaxWithSoftShadow.gif" width="75%"> | 优化阴影， 带自阴影的视差贴图 | 
+  | [03_Card](03_Parallax/Shader/03_Card.shader)| <img src="03_Parallax/03_Parallax/03_Card.gif" width="75%"> | 使用视差的方式实现卡牌效果 | 
