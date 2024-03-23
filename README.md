@@ -35,9 +35,9 @@
   | [03_08_SteepParallaxWithSoftShadow](03_Parallax/Shader/03_08_SteepParallaxWithSoftShadow.shader)| <img src="03_Parallax/03_08_SteepParallaxWithSoftShadow.gif" width="75%"> | 优化阴影， 带自阴影的视差贴图 | 
   | [03_Card](03_Parallax/Shader/03_Card.shader)| <img src="03_Parallax/03_Parallax/03_Card.gif" width="75%"> | 使用视差的方式实现卡牌效果 | 
   | | | | 
-  | [04_01_LightShadow](04_MultipleLightSources/Shader/04_01_LightShadow.shader)| <img src="04_MultipleLightSources/04_01_LightShadow.png" width="75%"> |  | 
-  | [04_02_SetShadowColor](04_MultipleLightSources/Shader/04_02_SetShadowColor.shader)| <img src="04_MultipleLightSources/04_02_SetShadowColor.png" width="75%"> |  | 
-  | [04_03_MultipleLitgts](04_MultipleLightSources/Shader/04_03_MultipleLitgts.shader)| <img src="04_MultipleLightSources/04_03_MultipleLitgts.png" width="75%" >|  | 
-  | [04_04_MultipleLitgtsShadows](04_MultipleLightSources/Shader/04_04_MultipleLitgtsShadows.shader)| <img src="04_MultipleLightSources/04_04_MultipleLitgtsShadows.png" width="75%"> |  | 
-  | [04_05_LightBakedShadow](04_MultipleLightSources/Shader/04_05_LightBakedShadow.shader)| <img src="04_MultipleLightSources/04_05_LightBakedShadow.png" width="75%"> |  | 
+  | [04_01_LightShadow](04_MultipleLightSources/Shader/04_01_LightShadow.shader)| <img src="04_MultipleLightSources/04_01_LightShadow.png" width="75%"> | 基础阴影效果 | 
+  | [04_02_SetShadowColor](04_MultipleLightSources/Shader/04_02_SetShadowColor.shader)| <img src="04_MultipleLightSources/04_02_SetShadowColor.png" width="75%"> | 自定义阴影颜色效果 | 
+  | [04_03_MultipleLitgts](04_MultipleLightSources/Shader/04_03_MultipleLitgts.shader)| <img src="04_MultipleLightSources/04_03_MultipleLitgts.png" width="75%" >| 点光源，多光源效果 | 
+  | [04_04_MultipleLitgtsShadows](04_MultipleLightSources/Shader/04_04_MultipleLitgtsShadows.shader)| <img src="04_MultipleLightSources/04_04_MultipleLitgtsShadows.png" width="75%"> | 多光源阴影效果  | 
+  | [04_05_LightBakedShadow](04_MultipleLightSources/Shader/04_05_LightBakedShadow.shader)| <img src="04_MultipleLightSources/04_05_LightBakedShadow.png" width="75%"> | 烘焙阴影效果 | 
   
