@@ -39,9 +39,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Gloss: 30
+    - _Gloss: 61
     - _HeightScale: 0.301
-    - _NormalScale: 0.67
+    - _NormalScale: 1
     - _Parallaxmap: 0
     m_Colors:
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}
