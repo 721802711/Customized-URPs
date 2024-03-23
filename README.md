@@ -17,3 +17,7 @@
   |  [01_HalfLanbert](01_LightingModel/Shader/01_HalfLanbert.shader) | <img src="01_LightingModel/01_HalfLanbert.png" width="75%"> | 漫反射渲染，半兰伯特光照模型|
   |  [01_Phong](01_LightingModel/Shader/01_Phong.shader) | <img src="01_LightingModel/01_Phong.png" width="75%"> | 高光渲染， 冯光照模型|
   |  [01_BlinnPhong](01_LightingModel/Shader/01_BlinnPhong.shader) | <img src="01_LightingModel/01_BlinnPhong.png" width="75%"> | 高光模型， 布林-冯光照模型|
+  | [02_BumpMap](02_Bump/Shader/02_BumpMap.shader) | <img src="02_Bump/02_BumpMap.png" width="75%"> | 凹凸渲染. 使用高度图渲染凹凸 | 
+  | [02_DisplacementMapping](02_Bump/Shader/02_DisplacementMapping.shader)|  <img src="02_Bump/02_DisplacementMapping.png" width="75%">|  凹凸渲染.使用曲面细分根据高度图渲染凹凸 | 
+  | [02_Normal](02_Bump/Shader/02_Normal.shader)|  <img src="02_Bump/02_Normal.png" width="75%">|  凹凸渲染. 使用法线贴图渲染凹凸| 
+  | [02_ParallaxOcclusion](02_Bump/Shader/02_ParallaxOcclusion.shader)|  <img src="02_Bump/02_ParallaxOcclusion.png" width="75%">| 凹凸渲染. 使用视差渲染凹凸 | 
