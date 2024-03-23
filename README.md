@@ -1,6 +1,6 @@
 ## Shader 代码
 
-制作的的一些过Shader代码，避免以后重复制作
+使用HLSL语法制作一些Unity Shader代码，避免以后重复制作
 
 > [!IMPORTANT]
 > Unity版本： URP 2022.3.9f 测试环境： Win DX11
