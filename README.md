@@ -15,5 +15,5 @@
   |  01_HLSLShader   | <img src="00_Base/01.gif" width="75%">    | 基础Shader，增加关键字枚举类型切换   |
   |  01_Lanbert | <img src="01_LightingModel/01_lanbert.png" width="75%"> | |
   |  01_HalfLanbert | <img src="01_LightingModel/01_HalfLanbert.png" width="75%"> | |
-  |  01_Phone | <img src="01_LightingModel/01_Phonet.png" width="75%"> | |
+  |  01_Phone | <img src="01_LightingModel/01_Phong.png" width="75%"> | |
   |  01_BlinnPhong | <img src="01_LightingModel/01_BlinnPhong.png" width="75%"> | |
