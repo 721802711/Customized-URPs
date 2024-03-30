@@ -41,20 +41,5 @@
   | [04_04_MultipleLitgtsShadows](04_MultipleLightSources/Shader/04_04_MultipleLitgtsShadows.shader)| <img src="04_MultipleLightSources/04_04_MultipleLitgtsShadows.png" width="75%"> | 多光源阴影效果  | 
   | [04_05_LightBakedShadow](04_MultipleLightSources/Shader/04_05_LightBakedShadow.shader)| <img src="04_MultipleLightSources/04_05_LightBakedShadow.png" width="75%"> | 烘焙阴影效果 | 
   | | | | 
-  | [05_2D]([04_05_LightBakedShadow](04_MultipleLightSources/Shader/04_05_LightBakedShadow.shader))| <img src="05_2D/05_2D.gif" width="75%"> | 2D系列的Shader效果 
-    - [x]  外描边
-    - [x]  纹理辉光
-    - [x]  溶解
-    - [x]  内描边
-    - [x]  渐变颜色
-    - [x]  故障
-    - [x]  2D阴影
-    - [x]  全息投影
-    - [x]  局部变色
-    - [x]  色相调整
-    - [x]  像素
-    - [x]  鬼魂
-    - [x]  模糊
-    - [x]  三色分离
-    - [x]  扫光 | 
+  | [05_2D]([04_05_LightBakedShadow](04_MultipleLightSources/Shader/04_05_LightBakedShadow.shader))| <img src="05_2D/05_2D.gif" width="75%"> | 2D系列的Shader效果 - 外描边 - 纹理辉光 - 溶解 - 内描边 - 渐变颜色、故障、2D阴影、全息投影、局部变色、色相调整、像素、鬼魂、模糊、三色分离、扫光。| 
   
