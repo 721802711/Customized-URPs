@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 108783337}
   - component: {fileID: 108783336}
   m_Layer: 0
-  m_Name: B_00_01_HLSLShader
+  m_Name: 01_HLSLShader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -251,7 +251,7 @@ GameObject:
   - component: {fileID: 462796829}
   - component: {fileID: 462796828}
   m_Layer: 0
-  m_Name: B_00_01_HLSLShader
+  m_Name: 01_HLSLShader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -452,7 +452,7 @@ GameObject:
   - component: {fileID: 1022899887}
   - component: {fileID: 1022899886}
   m_Layer: 0
-  m_Name: B_00_HLSLShader
+  m_Name: 00_HLSLShader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -535,7 +535,7 @@ GameObject:
   - component: {fileID: 1200292951}
   - component: {fileID: 1200292950}
   m_Layer: 0
-  m_Name: B_00_HLSLShader
+  m_Name: 00_HLSLShader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -561,7 +561,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8bdeb861f4fa61446b47ab17f49722a5, type: 2}
+  - {fileID: 2100000, guid: 2c1d797ebd2d3354589454edb97a1e2f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
