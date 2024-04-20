@@ -67,8 +67,9 @@ Shader "B/04_02_SetShadowColor"
             {
                 half NdotL = saturate(dot(normal, lightDir));
 
+                // 这里需要单独修改阴影颜色，所以需要把光照衰减增加进来
                 #ifdef _SHADOWCOLCUSTOM_ON
-                half3 radiance = lerp(_ShadowColor, lightColor, LightAttenuation * _ShadowColor.a) * NdotL;
+                half3 radiance = lerp(_ShadowColor.rgb, lightColor, LightAttenuation * _ShadowColor.a) * NdotL;
                 #else
                 half3 radiance = lightColor * LightAttenuation  * NdotL;                   // 计算衰减后的光照颜色
                 #endif
@@ -86,15 +87,14 @@ Shader "B/04_02_SetShadowColor"
 
             half3 BlinnPhongReflection(half3 albedo, Light light, half3 normal, half3 viewDir, half smoothness)
             {
-
-                half3 LightColor = light.color;    
+ 
                 half3 LightDir = normalize(light.direction);                //获取光照方向
                 half LightAttenuation = light.distanceAttenuation * light.shadowAttenuation;                            // 计算光源衰减
-
+                half3 attenuatedLightColor = light.color  * LightAttenuation;                                              // 计算衰减后的光照颜色
 
                 half3 ambient = SampleSH(normal).rgb * _AmbientColor.rgb * _AmbientColor.a;
-                half3 diffuse = Lambert(LightColor, LightDir, normal, LightAttenuation) * _DiffuseColor.rgb;
-                half3 specular = Specular(LightColor, LightDir, normal, viewDir, _SpecularColor, smoothness);
+                half3 diffuse = Lambert(light.color, LightDir, normal, LightAttenuation) * _DiffuseColor.rgb;
+                half3 specular = Specular(attenuatedLightColor, LightDir, normal, viewDir, _SpecularColor, smoothness);
                 half3 color = (ambient + diffuse) * albedo.rgb;
                 color += specular;
 

@@ -2,7 +2,7 @@ Shader "B/04_01_LightShadow"
 {
     Properties
     {
-        [HDR]_DiffuseColor("Diffuse Color", Color) = (1,1,1,1)
+        _DiffuseColor("Diffuse Color", Color) = (1,1,1,1)
         _MainTex ("Texture", 2D) = "white" {}
         _smoothness("smoothness",Range(0, 1)) = 0.5
         [HDR]_SpecularColor("Specular Color", Color) = (0.5,0.5,0.5,0.5)
@@ -82,8 +82,7 @@ Shader "B/04_01_LightShadow"
                 half3 ambient = SampleSH(normal).rgb * _AmbientColor.rgb * _AmbientColor.a;
                 half3 diffuse = Lambert(lightColor, lightDir, normal) * _DiffuseColor.rgb;
                 half3 specular = Specular(lightColor, lightDir, normal, viewDir, _SpecularColor, smoothness);
-                half3 color = (ambient + diffuse) * albedo.rgb;
-                color += specular;
+                half3 color = (ambient + diffuse) * albedo.rgb + specular;
 
                 return color;
             }

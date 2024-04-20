@@ -108,6 +108,7 @@ Shader "B/04_03_MultipleLitgts"
             half3 ShadeSingleLight(Light light, half3 normalWS, half3 viewDirectionWS)
             {
                 half LightAttenuation = light.distanceAttenuation * light.shadowAttenuation;                            // 计算光源衰减
+                
                 // 漫反射
                 half3 diffuseColor = Lambert(light.color, light.direction, normalWS);
 
@@ -127,7 +128,7 @@ Shader "B/04_03_MultipleLitgts"
                 half LightAttenuation = light.distanceAttenuation * light.shadowAttenuation;                            // 计算光源衰减
                 half3 attenuatedLightColor = LightColor.rgb * LightAttenuation;                                             // 计算衰减后的光照颜色
 
-                return DLightingBased(LightColor, LightDir, LightAttenuation, normalWS, viewDirectionWS, uv);
+                return DLightingBased(attenuatedLightColor, LightDir, LightAttenuation, normalWS, viewDirectionWS, uv);
 			}
 
             // ==========================================================================================================

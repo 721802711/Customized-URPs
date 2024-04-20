@@ -93,28 +93,25 @@ Shader "B/04_04_MultipleLitgtsShadows"
 
             // ==========================================================================================================
 
-            half3 DLightingBased(half3 lightColor, half3 lightDir, half lightAttenuation, half3 normalWS, half3 viewDirectionWS, half2 uv)
+            half3 DLightingBased(half3 lightColor, half3 lightDir, half3 normalWS, half3 viewDirectionWS, half2 uv)
             {
 
         
-                //漫反射     
-                half NdotL = saturate(dot(normalWS, lightDir));                  
-                half3 diffuse = lightColor * NdotL * lightAttenuation  * _DiffuseColor.rgb;
+                // 漫反射                   
+                half3 diffuse = Lambert(lightColor, lightDir, normalWS) * _DiffuseColor.rgb;
 
-                //高光计算
-
-                float3 halfVec = SafeNormalize(float3(lightDir) + float3(viewDirectionWS));
-                half NdotH = half(saturate(dot(normalWS, halfVec)));
+                // 高光计算
                 half smoothness = exp2(10 * _smoothness + 1);
-                half modifier = pow(max(0,NdotH), smoothness);
-                half3 specular = lightColor * modifier * _SpecularColor.rgb;
+                half3 specular = Specular(lightColor, lightDir, normalWS, viewDirectionWS, _SpecularColor, smoothness);
 
                 // 环境光
                 half3 albedo = SAMPLE_TEXTURE2D(_MainTex,sampler_MainTex,uv).rgb;     //贴图采样变成3个变量
                 half3 ambient = SampleSH(normalWS).rgb * _AmbientColor.rgb * _AmbientColor.a;
+
                 // 合并
                 half3 color = (ambient + diffuse) * albedo.rgb;
                 color += specular;
+
 
                 return color;     
 			}
@@ -124,6 +121,8 @@ Shader "B/04_04_MultipleLitgtsShadows"
             half3 ShadeSingleLight(Light light, half3 normalWS, half3 viewDirectionWS)
             {
 
+                half LightAttenuation = light.distanceAttenuation * light.shadowAttenuation;                            // 计算光源衰减
+
                 half NdotL = dot(normalWS, light.direction);
                 half3 diffuseColor = light.color * saturate(NdotL) * _DiffuseColor.rgb;
                 //blinn-phong
@@ -132,7 +131,7 @@ Shader "B/04_04_MultipleLitgtsShadows"
                 half3 specularColor = light.color*pow(saturate(dot(normalWS, halfDir)), smoothness) * _SpecularColor.rgb;
                 
   
-                return (specularColor + diffuseColor) * light.distanceAttenuation * light.shadowAttenuation;
+                return (specularColor + diffuseColor) * LightAttenuation;
 
             }
             
@@ -142,9 +141,9 @@ Shader "B/04_04_MultipleLitgtsShadows"
                 half3 LightColor = light.color;    
                 half3 LightDir = normalize(light.direction);                //获取光照方向
                 half LightAttenuation = light.distanceAttenuation * light.shadowAttenuation;                            // 计算光源衰减
-                half3 attenuatedLightColor = LightColor.rgb;                                             // 计算衰减后的光照颜色
+                half3 attenuatedLightColor = LightColor.rgb * LightAttenuation;                                             // 计算衰减后的光照颜色
 
-                return DLightingBased(LightColor, LightDir, LightAttenuation, normalWS, viewDirectionWS, uv);
+                return DLightingBased(attenuatedLightColor, LightDir, normalWS, viewDirectionWS, uv);
 			}
 
             // ==========================================================================================================
