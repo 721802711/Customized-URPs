@@ -38,7 +38,7 @@ Material:
     m_Floats:
     - _AddLights: 1
     - _Gloss: 23.8
-    - _smoothness: 0.5
+    - _smoothness: 0.209
     m_Colors:
     - _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 0.990566, g: 0, b: 0, a: 1}

@@ -20,19 +20,19 @@ Shader "B/01_HLSLShader"
 
         CBUFFER_END
 
-            struct appdata
-            {
-                float4 positionOS : POSITION;
-                float2 texcoord : TEXCOORD0;
-            };
+        struct appdata
+        {
+            float4 positionOS : POSITION;
+            float2 texcoord : TEXCOORD0;
+        };
 
-            struct v2f
-            {
-                float2 uv : TEXCOORD0;
-                float4 positionCS : SV_POSITION;
-            };
+        struct v2f
+        {
+            float2 uv : TEXCOORD0;
+            float4 positionCS : SV_POSITION;
+        };
 
-            TEXTURE2D(_MainTex);                          SAMPLER(sampler_MainTex);
+        TEXTURE2D(_MainTex);                          SAMPLER(sampler_MainTex);
         ENDHLSL
 
 

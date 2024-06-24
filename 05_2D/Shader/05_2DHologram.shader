@@ -54,6 +54,8 @@ Shader "B/05_2DHologram"
 
             Blend[_SrcBlend][_DstBlend]
             Cull[_cull]
+            ZWrite Off
+
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag

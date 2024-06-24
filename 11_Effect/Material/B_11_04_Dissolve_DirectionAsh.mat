@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: B_11_04_Dissolve_DirectionAsh
+  m_Shader: {fileID: 4800000, guid: ddd0aed9494b7c244a867c51331e6edc, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e645efa846e74894cabcbd2a32e31745, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: f71e31f1c0043b8499f704a193268508, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _RampTex:
+        m_Texture: {fileID: 2800000, guid: 9d4de93ce782ee7408fc01edfd068014, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WhiteNoiseTex:
+        m_Texture: {fileID: 2800000, guid: af6e9b2455e4522439bd090a92a3cdfa, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AshDensity: 0.468
+    - _AshWidth: 0.089
+    - _DistanceEffect: 0.577
+    - _EdgeLength: 0.075
+    - _FlyIntensity: 0.214
+    - _MaxBorderY: 1.68
+    - _MinBorderY: -1
+    - _Threshold: 0.653
+    m_Colors:
+    - _AshColor: {r: 0.16981131, g: 0, b: 0, a: 1}
+    - _EdgeFirstColor: {r: 1, g: 1, b: 1, a: 1}
+    - _EdgeSecondColor: {r: 1, g: 1, b: 1, a: 1}
+    - _FlyDirection: {r: -1, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []

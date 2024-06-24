@@ -64,6 +64,7 @@ Shader "B/05_2DGlow"
 
             Blend[_SrcBlend][_DstBlend]
             Cull[_cull]
+            
             HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag

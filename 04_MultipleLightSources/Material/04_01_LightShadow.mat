@@ -30,7 +30,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _gloss: 20
-    - _smoothness: 0.5
+    - _smoothness: 0.517
     m_Colors:
     - _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
