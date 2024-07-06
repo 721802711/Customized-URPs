@@ -29,8 +29,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CutOff: 0.525
-    - _smoothness: 1
+    - _CutOff: 0.514
+    - _smoothness: 0.509
     m_Colors:
     - _AmbientColor: {r: 1, g: 1, b: 1, a: 1}
     - _DiffuseColor: {r: 1, g: 1, b: 1, a: 1}

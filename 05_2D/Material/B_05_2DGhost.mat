@@ -30,9 +30,9 @@ Material:
     m_Ints: []
     m_Floats:
     - _DstBlend: 10
-    - _GhostBlend: 0.86
-    - _GhostColorBoost: 2.42
-    - _GhostTransparency: 0.162
+    - _GhostBlend: 0.838
+    - _GhostColorBoost: 3.09
+    - _GhostTransparency: 0.914
     - _SrcBlend: 5
     - _cull: 0
     m_Colors: []

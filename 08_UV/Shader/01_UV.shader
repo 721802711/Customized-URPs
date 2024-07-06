@@ -2,7 +2,7 @@ Shader "B/01_UV"
 {
     Properties
     {
-        _powInt ("Pow Int", Float) = 2
+        _powInt ("Pow Int", Range(0, 2)) = 0.5
     }
     SubShader
     {
@@ -60,7 +60,7 @@ Shader "B/01_UV"
 
                 float2 uv = i.uv; // 原始UV坐标
                 
-                float addXY = length(uv - 0.5);  
+                float addXY = length(uv - _powInt);  
                 float step5 = step(addXY, 0.5);  // 圆
                 // 1 表示 白色，   0 表示黑色
                 half4 col = half4(0,0,0,0);

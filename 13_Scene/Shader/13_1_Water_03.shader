@@ -181,16 +181,16 @@ Shader "URP/URP_Water_01"
                 // 折射
                 
                 float2 ReflactionMoveUV = UVMovement(i.uv, _RefractionSize.x,_RefractionSize.y,_RefractionScale);
-                float ReflactionNoise = SAMPLE_TEXTURE2D(_NoiseMap,sampler_NoiseMap,ReflactionMoveUV);
+                float ReflactionNoise = SAMPLE_TEXTURE2D(_NoiseMap,sampler_NoiseMap,ReflactionMoveUV).r;
                 float ReflactionSceneMoveDepth = saturate(GetDepthFade(i.positionWS, _SceneMoveDepth));
 
                 float3 SceneColor = GetSceneColor(i.positionWS,float2(ReflactionNoise * _RefractionSize.z,ReflactionNoise * _RefractionSize.w) * ReflactionSceneMoveDepth);
 
 
                 float4 col = float4(0,0,0,0);   
-             
-                col.rgb = SceneColor;
-                //col.a = watercolor.a;
+
+                col.rgb = depthfade;
+                col.a = watercolor.a;
 
                 return col;
             }        

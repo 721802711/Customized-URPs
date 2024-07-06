@@ -41,15 +41,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DistortTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
         m_Texture: {fileID: 2800000, guid: d2bfdc4812bf9c94a9f5eddd4df365d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: cf5a159747b3af2468ca85f8d7b71eec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MaskTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: d2bfdc4812bf9c94a9f5eddd4df365d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
@@ -65,7 +65,7 @@ Material:
     - _DistortTexRotSpeed: 0
     - _DistortTex_Speed_U: 0
     - _DistortTex_Speed_V: 0
-    - _DstBlend: 10
+    - _DstBlend: 1
     - _MainTexAngle: 0
     - _MaskOne_UV: 0
     - _MaskTexAngle: 0

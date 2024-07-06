@@ -279,7 +279,7 @@ Shader "B/13_1_Water"
 
                 float4 col;
 
-                col.rgb = lerp(SceneColor,final_color.rgb,final_color.a) + DirectColor;;
+                col.rgb = SceneColor;
                 col.a = 1;
 
                 return col;

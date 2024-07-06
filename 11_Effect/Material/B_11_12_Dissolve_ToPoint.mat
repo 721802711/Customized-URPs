@@ -40,7 +40,7 @@ Material:
     - _DistanceEffect: 0.607
     - _EdgeLength: 0.1
     - _MaxDistance: 1.31
-    - _Threshold: 0.18
+    - _Threshold: 0.27
     m_Colors:
     - _StartPoint: {r: 0, g: 0, b: 0, a: 1}
   m_BuildTextureStacks: []

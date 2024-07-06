@@ -11,7 +11,8 @@ Material:
   m_Shader: {fileID: 4800000, guid: 1b9e15fd306520e4ba4ade6a6968e84f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _ADDITIONALLIGHTS
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -46,13 +47,13 @@ Material:
     m_Ints: []
     m_Floats:
     - _AO: 1
-    - _AddLights: 0
+    - _AddLights: 1
     - _EmissivInt: 1
-    - _LightInt: 0.3
-    - _Metallic: 0
+    - _LightInt: 0.069
+    - _Metallic: 0.714
     - _NormalInvertG: 0
     - _NormalScale: 0
-    - _Roughness: 0.5
+    - _Roughness: 0.966
     - _RoughnessInvert: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}

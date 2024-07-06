@@ -63,7 +63,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BlendType: 0
-    - _ClearCoatSmoothness: 0.531
+    - _ClearCoatSmoothness: 0.436
     - _ClearCoatStrength: 0
     - _Cull: 2
     - _CutOff: 0
