@@ -41,5 +41,32 @@
   | [04_04_MultipleLitgtsShadows](04_MultipleLightSources/Shader/04_04_MultipleLitgtsShadows.shader)| <img src="04_MultipleLightSources/04_04_MultipleLitgtsShadows.png" width="75%"> | 多光源阴影效果  | 
   | [04_05_LightBakedShadow](04_MultipleLightSources/Shader/04_05_LightBakedShadow.shader)| <img src="04_MultipleLightSources/04_05_LightBakedShadow.png" width="75%"> | 烘焙阴影效果 | 
   | | | | 
-  | [05_2D]([04_05_LightBakedShadow](04_MultipleLightSources/Shader/04_05_LightBakedShadow.shader))| <img src="05_2D/05_2D.gif" width="75%"> | 2D系列的Shader效果 - 外描边 - 纹理辉光 - 溶解 - 内描边 - 渐变颜色 - 故障 -2D阴影 - 全息投影 - 局部变色 - 色相调整 - 像素 - 鬼魂 - 模糊 - 三色分离 - 扫光| 
-  
+  | [05_2D](04_MultipleLightSources/Shader/04_05_LightBakedShadow.shader)| <img src="05_2D/05_2D.gif" width="75%"> | 2D系列的Shader效果 - 外描边 - 纹理辉光 - 溶解 - 内描边 - 渐变颜色 - 故障 -2D阴影 - 全息投影 - 局部变色 - 色相调整 - 像素 - 鬼魂 - 模糊 - 三色分离 - 扫光| 
+  | [06_MathFun](06_MathFun/Shader)| <img src="06_MathFun/06_MathFun.gif" width="75%"> | 基础数学计算，位移-旋转，放大缩小 | 
+  | [07_VertexAnimation](07_VertexAnimation/Shader)| <img src="" width="75%"> | 使用顶点计算的一些基础动画，没有录视频 | 
+  | [08_UV](08_UV)| <img src="08_UV/UV.gif" width="75%"> | 贴图UV的一些基础运算 |  
+  | | | | 
+  | [09_01_PBR材质扩展](09_AlternativeLighting/Shader/PBR)| <img src="09_AlternativeLighting/PBRshader基础上扩展.png" width="75%"> | 包含4个材质，基础PBR，扩展多贴图,增加金属度单独控制 |  
+  | [09_02_基础卡通渲染](09_AlternativeLighting)| <img src="09_AlternativeLighting/卡通着色.png" width="75%"> | 两种卡通渲染方法，使用贴图控制过度实现，使用光照计算实现 |  
+  | [09_02_自定义Lit](09_AlternativeLighting/Shader/Lit)| <img src="09_AlternativeLighting/自定义Lit.png" width="75%"> | 两种卡通渲染方法，使用贴图Ramp控制过度实现，使用光照计算实现 |  
+  | [09_02_自定义PBR](09_AlternativeLighting/Shader/Lit)| <img src="09_AlternativeLighting/自定义PBR.png" width="75%"> | 根据方法实现的制定PBR，减少不必要的代码 |  
+  | | | | 
+  | [10_Environment](10_Environment/Shader)| <img src="10_Environment/场景部分.png" width="75%"> | 1. 雾   2. 渐变天空盒  3. 场景反射  4. CubeMap反射效果  5. MatCap低性能反射  |  
+  | [11_Effect](11_Effect/Shader)| <img src="11_Effect/22.gif" width="75%"> | 特效比较多，大部分和特效叠加有关系  |  
+  | [12_01_FlatTessellation](12_Tessellation/Shader/FlatTessellation.shader)| <img src="12_Tessellation/Flat曲面细分.png" width="75%"> | Flat曲面细分  |  
+  | [12_02_PNTessellation](12_Tessellation/Shader/PNTessellation.shader)| <img src="12_Tessellation/PNT曲面细分.png" width="75%"> | PNT曲面细分  |  
+  | [12_03_PNTessellation](12_Tessellation/Shader/PhongTessellation.shader)| <img src="12_Tessellation/phong曲面细分.png" width="75%"> | Phong曲面细分  |  
+  | [12_04_TS_CameraDistance](12_Tessellation/Shader/TS_CameraDistance.shader)| <img src="12_Tessellation/屏幕占比进行细分.png" width="75%"> | 屏幕占比进行细分  |  
+  | [12_05_TS_ScreenOccupancyRange](12_Tessellation/Shader/TS_ScreenOccupancyRange.shader)| <img src="12_Tessellation/摄像机远景控制细分.png" width="75%"> | 摄像机远景控制细分  |  
+  | [12_04_TS_TextureBased](12_Tessellation/Shader/TS_TextureBased.shader)| <img src="12_Tessellation/贴图控制细分.png" width="75%"> | 屏幕占比进行细分  |  
+  | | | | 
+  | [13_01_Water](13_Scene/Shader/13_1_Water.shader)| <img src="13_Scene/场景卡通水.png" width="75%"> | 卡通水渲染  |  
+  | [13_02_Deacl](13_Scene/Shader/13_3_Deacl.shader)| <img src="13_Scene/场景贴花.png" width="75%"> | 场景贴画  |  
+  | [13_03_scenarioFog](13_Scene/Shader/13_2_scenarioFog.shader)| <img src="13_Scene/场景高度雾.png" width="75%"> | 场景雾，高度雾  |  
+  | | | | 
+  | [14_01_NDC](14_Data/Shader/14_NDCPostion.shader)| <img src="14_Data/NDC位置.png" width="75%"> | NDC可视化显示  |  
+  | [13_02_NormalBlend](14_Data/Shader/14_NormalBlend.shader)| <img src="14_Data/两法线融合.png" width="75%"> | 两个法线的融合效果  |  
+  | [13_03_TangentToWorld](14_Data/Shader/14_NormalTangentToWorld.shader)| <img src="14_Data/切线空间转换成世界空间法线.png" width="75%"> | 切线空间转换成世界空间可视化  |  
+  | [13_03_Transform](14_Data/Shader/14_Transform.shader)| <img src="14_Data/对象空间.png" width="75%"> | 对象空间  |  
+  | [13_03_SceneColor](14_Data/Shader/14_SceneColor.shader)| <img src="14_Data/获取场景的颜色.png" width="75%"> | 场景的颜色  |  
+  | [13_03_ViewDirectionWS](14_Data/Shader/14_ViewDirectionWS.shader)| <img src="14_Data/视角方向转换成世界空间.png" width="75%"> | 视角方向转换成世界空间  |  
