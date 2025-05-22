@@ -63,6 +63,10 @@
   | [13_01_Water](13_Scene/Shader/13_1_Water.shader)| <img src="13_Scene/场景卡通水.png" width="75%"> | 卡通水渲染  |  
   | [13_02_Deacl](13_Scene/Shader/13_3_Deacl.shader)| <img src="13_Scene/场景贴花.png" width="75%"> | 场景贴画  |  
   | [13_03_scenarioFog](13_Scene/Shader/13_2_scenarioFog.shader)| <img src="13_Scene/场景高度雾.png" width="75%"> | 场景雾，高度雾  |  
+  | [13_4_BakedBumpedSpecularLow](13_Scene/Shader/13_4_BakedBumpedSpecularLow.shader)| <img src="13_Scene/场景高度雾.png" width="75%"> | 基础PBR材质 高度雪，苔藓  |  
+  | [13_5_AlphaBlend](13_Scene/Shader/13_5_AlphaBlend.shader)| <img src="13_Scene/场景高度雾.png" width="75%"> | 场景半透明物体，支持雾效，软粒子  |  
+  | [13_5_AlphaBlend_Cull](13_Scene/Shader/13_5_AlphaBlend_Cull.shader)| <img src="13_Scene/场景高度雾.png" width="75%"> | 场景半透明物体，支持设置剔除模式（_Cull）  |  
+  
   | | | | 
   | [14_01_NDC](14_Data/Shader/14_NDCPostion.shader)| <img src="14_Data/NDC位置.png" width="75%"> | NDC可视化显示  |  
   | [14_02_NormalBlend](14_Data/Shader/14_NormalBlend.shader)| <img src="14_Data/两法线融合.png" width="75%"> | 两个法线的融合效果  |  
