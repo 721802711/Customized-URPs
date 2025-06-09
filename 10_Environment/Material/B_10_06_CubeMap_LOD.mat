@@ -7,13 +7,12 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: B_10_03_ReflectCube
-  m_Shader: {fileID: 4800000, guid: f847e369f07aa1149bb6e1b47dad0e34, type: 3}
+  m_Name: B_10_06_CubeMap_LOD
+  m_Shader: {fileID: 4800000, guid: e0f4f618905ccd34daa8fed23c141cf2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
-  m_InvalidKeywords:
-  - _SCR_GRADIENT
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -23,15 +22,16 @@ Material:
   m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
-    m_TexEnvs: []
+    m_TexEnvs:
+    - _Cubemap:
+        m_Texture: {fileID: 8900000, guid: d54416e583b9b5b46a4d49896a10ff11, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _ReflectBlur: 0.188
-    - _Scr: 0
-    - _mult: 1
-    - _pwer: 1
-    m_Colors:
-    - _Bottom: {r: 0, g: 0, b: 0, a: 0}
-    - _Top: {r: 1, g: 1, b: 1, a: 0}
+    - _CubeMapLODBaseLvl: 0
+    - _ReflectBlur: 1
+    - _Rotation: 208.3
+    m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

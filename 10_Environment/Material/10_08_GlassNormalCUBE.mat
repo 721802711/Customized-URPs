@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: B_10_04_CubeMap
-  m_Shader: {fileID: 4800000, guid: e27681cf29349fb44a883b63f1c756ea, type: 3}
+  m_Name: 10_08_GlassNormalCUBE
+  m_Shader: {fileID: 4800000, guid: bb385911ca89955419f6e3fd0bf5ef7b, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -23,19 +23,26 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _CubeMap:
-        m_Texture: {fileID: 8900000, guid: bc853e54ab419604ba4d040c30c508f7, type: 3}
+    - _Matcap:
+        m_Texture: {fileID: 2800000, guid: 243c9d5992c0bbe489c5eaa0dacada95, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _Cubemap:
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 68bb01881d16b784abb93998282fc267, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _RefracMatcap:
         m_Texture: {fileID: 8900000, guid: d54416e583b9b5b46a4d49896a10ff11, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CubeMapLODBaseLvl: 2.13
-    - _ReflectBlur: 0.745
-    - _Rotation: 208
-    m_Colors: []
+    - _MatcapMu: 1.5
+    - _OpacityMu: 10
+    - _ReflectBlur: 1
+    - _RefracMu: 1
+    m_Colors:
+    - _BaseColor: {r: 0, g: 0, b: 0, a: 0}
+    - _MatcapColor: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
