@@ -1,9 +1,10 @@
-﻿Shader "B/11_15_Particle"
+Shader "11_15_Particle"
 {
     Properties
     {
 		//基础
 		[HDR]_Color ("颜色", Color) = (1, 1, 1, 1)
+		_Glowintensity ("发光强度", Range(1, 10)) = 1         // 发光强度
 		_Alpha ("Alpha", Range(0, 5)) = 1
         _MainTex ("纹理", 2D) = "white" {}
 		[MaterialToggle]_AorR("使用R当Alpha通道", float) = 0
@@ -25,6 +26,16 @@
 		[Header(UV rotation)]
 		[MaterialToggle]_UVRot("uv 旋转", float) = 0
 		_MainTexAngle ("纹理旋转", Range(0, 1)) = 0
+
+
+
+		// 副纹理
+		[Header(SecondaryTex)]
+		[Toggle(_USE_SECONDARYTEX)]_USE_SECONDARYTEX("副纹理", float) = 0
+		_SecondaryTex ("副纹理", 2D) = "white" {}
+		[Header(UV speed)]
+		_SecondaryTex_Speed_U ("副纹理U方向速度", float) = 0
+		_SecondaryTex_Speed_V ("副纹理V方向速度", float) = 0
 
 
 		//遮罩
@@ -56,7 +67,7 @@
 		[Header(Distort)]
 		[Toggle(_USE_DISTORT)]_Toggle_USE_DISTORT_ON("扭曲", float) = 0
 		_DistortTex ("扭曲纹理", 2D) = "whiter" {}
-		_DistortStrength ("扭曲强度", Range(-0.1, 0.1)) = 0
+		_DistortStrength ("扭曲强度", Range(-1.0, 1.0)) = 0
 		_DistortTex_Speed_U ("U 方向扭曲速度", float) = 0
 		_DistortTex_Speed_V ("V 方向扭曲速度", float) = 0
 		[MaterialToggle]_UVRot_DistortTex("扭曲纹理uv 旋转", float) = 0
@@ -130,6 +141,7 @@
 			#pragma shader_feature _USE_RIM
 			#pragma shader_feature _USE_DISSOLVE
 			#pragma shader_feature _USE_CHANGECOLOR
+			#pragma shader_feature _USE_SECONDARYTEX            // 副纹理
 			#pragma multi_compile __ _UNITY_RENDER
 			
 			#include "HLSLEffectParticleLibrary.hlsl"
