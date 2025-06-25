@@ -123,29 +123,18 @@ Shader "URP/14_NormalBlend"
                 
                 // ===========================================================================================================
                 // 法线贴图
-                // 缩放因子
-                float scale = _NormalsScale;
-                float scaledHalf = 0.5 * scale;
-                float reciprocalScale = 1.0 / scaledHalf;
-                float speed = -0.5 * _NormalsSpeed;
 
-                // 计算Panning UV
-                float2 PanningUV1 = PanningUV(i.uv, reciprocalScale, 1.0, speed, float2(0.0, 0.0));
-
-                // 采样第二个法线纹理
-                float2 PanningUV2 = PanningUV(i.uv, 1.0 /_NormalsScale, 1.0, _NormalsSpeed, float2(0.0, 0.0));
             
-                float4 normalTex1 = SAMPLE_TEXTURE2D(_NormalsTex, sampler_NormalsTex, PanningUV1);
-                float4 normalTex2 = SAMPLE_TEXTURE2D(_NormalsTex, sampler_NormalsTex, PanningUV2);
+                float4 normalTex1 = SAMPLE_TEXTURE2D(_NormalsTex, sampler_NormalsTex, i.uv);
                 half3 normalTS1 = UnpackNormalScale(normalTex1, _NormalsStrength);   
-                half3 normalTS2 = UnpackNormalScale(normalTex2, _NormalsStrength);
 
+                
                 // 法线贴图混合
-                half3 normalTS = NormalBlend(normalTS1.rgb, normalTS2.rgb);
+                //half3 normalTS = NormalBlend(normalTS1.rgb, normalTS2.rgb);
 
                 float3x3 TBN = {i.tangentWS.xyz,i.bitangentWS.xyz,i.normalWS.xyz};          //世界空间法线方向
 
-                float3 normalWS = mul(normalTS,TBN);                                          //顶点法线，和法线贴图融合 == 世界空间的法线信息  
+                float3 normalWS = mul(normalTS1,TBN);                                          //顶点法线，和法线贴图融合 == 世界空间的法线信息  
 
                 // ===========================================================================================================
 
@@ -153,7 +142,7 @@ Shader "URP/14_NormalBlend"
                 half4 col = half4(0,0,0,0);
 
 
-                col.rgb = normalTS;
+                col.rgb = normalTS1;
                 col.a = 1;
 
                 return col;

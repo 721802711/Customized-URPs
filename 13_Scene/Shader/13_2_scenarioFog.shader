@@ -11,7 +11,7 @@ Shader "B/13_2_scenarioFog"
         _TexUV("_TexUV",Vector) = (0.2,0.2,0.2,0.2)
         _Niose_R_Tiling("_Niose_R_Tiling", Float) = 1.0
         _Niose_G_Tiling("_Niose_G_Tiling", Float) = 1.0
-        _Blend("_Blend",Float) = 1.0
+        _Blend("_Blend",Range(1,3)) = 1.0
     }
     SubShader
     {
@@ -48,6 +48,7 @@ Shader "B/13_2_scenarioFog"
 
         TEXTURE2D(_MainTex);                          SAMPLER(sampler_MainTex);
         TEXTURE2D(_MaskTex);                          SAMPLER(sampler_MaskTex);
+
         TEXTURE2D(_CameraDepthTexture);
         SAMPLER(sampler_CameraDepthTexture);
 

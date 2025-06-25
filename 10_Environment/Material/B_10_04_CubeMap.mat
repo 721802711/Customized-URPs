@@ -33,7 +33,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _CubeMapLODBaseLvl: 2.13
+    - _CubeMapLODBaseLvl: 0.28
     - _ReflectBlur: 0.745
     - _Rotation: 208
     m_Colors: []

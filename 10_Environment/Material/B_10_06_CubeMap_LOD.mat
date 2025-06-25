@@ -30,8 +30,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _CubeMapLODBaseLvl: 0
-    - _ReflectBlur: 1
-    - _Rotation: 208.3
+    - _ReflectBlur: 0.646
+    - _Rotation: 224
     m_Colors: []
   m_BuildTextureStacks: []
   m_AllowLocking: 1

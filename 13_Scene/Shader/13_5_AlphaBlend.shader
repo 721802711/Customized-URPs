@@ -1,4 +1,4 @@
-Shader "DFW/Scenes/AlphaBlend"
+Shader "B/13_5_AlphaBlend"
 {
     Properties
     {

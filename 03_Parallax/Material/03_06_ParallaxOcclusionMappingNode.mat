@@ -37,10 +37,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Gloss: 77
-    - _HeightScale: 3.78
-    - _NormalScale: 0.45
+    - _Gloss: 96
+    - _HeightScale: 10
+    - _NormalScale: 1
     - _Steps: 21.6
     m_Colors:
     - _SpecularColor: {r: 0.22272164, g: 0.49643928, b: 0.8584906, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

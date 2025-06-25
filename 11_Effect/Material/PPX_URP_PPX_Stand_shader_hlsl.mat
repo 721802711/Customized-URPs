@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PPX_URP_PPX_Stand_shader_hlsl
+  m_Shader: {fileID: 4800000, guid: 8375f42d864cabd4098df539cfb9f19e, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Base_Tex:
+        m_Texture: {fileID: 2800000, guid: 103c570265ebcf3488c9d7acf3b1d5c1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Disslove_Tex:
+        m_Texture: {fileID: 2800000, guid: 7dab35079d3c08e43b2e2e6fbf54ec27, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Mask:
+        m_Texture: {fileID: 2800000, guid: b2bd2c12aa3e43145aa2f6b849a0471e, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Side_Tex:
+        m_Texture: {fileID: 2800000, guid: 702d142667e794e498250a26c196ed71, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _star_Tex:
+        m_Texture: {fileID: 2800000, guid: 7fa0725428e75e543a46ea36b553d6ce, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _Cull: 0
+    - _Dissolve: 0.786
+    - _Hardness: 11
+    - _ZTest: 4
+    - _ZWrite: 1
+    - _edge: 0.214
+    - _min: 0.201
+    - _side_power: 1.75
+    - _star_color_power: 3
+    m_Colors:
+    - _Base_color: {r: 0.6039216, g: 0.49803922, b: 0, a: 0}
+    - _Disslove_speed: {r: -1, g: 1, b: 0.02, a: 0}
+    - _Disslove_uv: {r: 3, g: 3, b: 0, a: 0}
+    - _Point_speed: {r: 1, g: -1, b: 0.02, a: 0}
+    - _Point_uv: {r: 10, g: 10, b: 0, a: 0}
+    - _frensel_inside: {r: 0.4433962, g: 0.012511451, b: 0, a: 0}
+    - _frensel_outside: {r: 1.8892621, g: 1.3847994, b: 0, a: 0}
+    - _side_color: {r: 1, g: 0.7529412, b: 0.21176471, a: 0}
+    - _star_color: {r: 10.680627, g: 7.6287794, b: 1.3602686, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

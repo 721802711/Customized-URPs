@@ -1,4 +1,4 @@
-Shader "DFW/Scenes/AlphaBlend_Cull"
+Shader "B/13_5_AlphaBlend_Cull"
 {
     Properties
     {
@@ -66,8 +66,7 @@ Shader "DFW/Scenes/AlphaBlend_Cull"
             half4 frag(Varyings i) : SV_Target
             {
                 half4 col = _Bright * i.color * _TintColor * SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, i.uv);
-
-
+                
                 return col;
             }
 
