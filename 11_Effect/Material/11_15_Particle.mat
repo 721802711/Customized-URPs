@@ -52,6 +52,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: d2bfdc4812bf9c94a9f5eddd4df365d8, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
     - _Alpha: 1
@@ -65,7 +69,8 @@ Material:
     - _DistortTexRotSpeed: 0
     - _DistortTex_Speed_U: 0
     - _DistortTex_Speed_V: 0
-    - _DstBlend: 1
+    - _DstBlend: 10
+    - _Glowintensity: 1
     - _MainTexAngle: 0
     - _MaskOne_UV: 0
     - _MaskTexAngle: 0
@@ -78,6 +83,8 @@ Material:
     - _RimAlpha: 0
     - _RimPower: 1
     - _RimRevert: 0
+    - _SecondaryTex_Speed_U: 0
+    - _SecondaryTex_Speed_V: 0
     - _SoftFade: 1
     - _SrcBlend: 5
     - _Toggle_USE_CHANGECOLOR_ON: 0
@@ -86,6 +93,7 @@ Material:
     - _Toggle_USE_RIM_ON: 0
     - _Toggle_USE_SOFTPARTICLE_ON: 0
     - _USE_MASK: 0
+    - _USE_SECONDARYTEX: 0
     - _UVRot: 0
     - _UVRot_DistortTex: 0
     - _UVRot_Mask: 0
@@ -107,3 +115,4 @@ Material:
     - _PolarMainTiling: {r: 1, g: 1, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1
