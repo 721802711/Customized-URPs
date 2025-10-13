@@ -14,7 +14,9 @@ CBUFFER_START(UnityPerMaterial)
 	float4 _MaskTex_ST;	
 	float4 _DistortTex_ST;
 	float4 _DissolveTex_ST;
+	float4 _SecondaryTex_ST;
 
+	// 颜色
 	half4 _Color;
 	half4 _DetailColor;
 	half4 _MaskTexColor;
@@ -32,6 +34,14 @@ CBUFFER_START(UnityPerMaterial)
 	half _UVRot;
 	half _SoftFade;
 	half _UV2;
+
+	// glow强度
+	half _Glowintensity;
+
+	// 副纹理
+	half _SecondaryTex_Speed_U;
+	half _SecondaryTex_Speed_V;
+
 
 
 	//边缘光
@@ -97,7 +107,8 @@ CBUFFER_END
 
 sampler2D _CameraDepthTexture;            SAMPLER(sampler_CameraDepthTexture);
 
-sampler2D _MainTex;
+sampler2D _MainTex;                     // 主纹理
+sampler2D _SecondaryTex;                // 副纹理
 sampler2D _DetailTex;
 sampler2D _MaskTex;
 sampler2D _DistortTex;
@@ -172,6 +183,13 @@ struct v2f
 #if (defined(_USE_SOFTPARTICLE))
 		float4 projPos : TEXCOORD2;
 #endif
+
+
+#if _USE_SECONDARYTEX
+	float2 uvSec : TEXCOORD1; // SecondaryTex 独立 UV 通道
+#endif
+
+
 
 #if _USE_MASK
 	
@@ -266,6 +284,15 @@ v2f vert(appdata v)
 	
 #endif
 
+	// 副纹理
+
+#if _USE_SECONDARYTEX
+	o.uvSec = TRANSFORM_TEX(v.uv, _SecondaryTex);
+	o.uvSec += UVSpeed(_SecondaryTex_Speed_U, _SecondaryTex_Speed_V);
+#endif
+
+
+
 	// distort
 #if _USE_DISTORT
 	half2 uvDistortSpeed = UVSpeed(_DistortTex_Speed_U, _DistortTex_Speed_V);
@@ -348,6 +375,15 @@ half4 frag(v2f i , half4 color)
     half4 col = tex2D(_MainTex, i.uv);
 #endif
 
+// 副纹理颜色
+#if _USE_SECONDARYTEX
+	half4 secCol = tex2D(_SecondaryTex, i.uvSec);
+	col *= secCol;
+#endif
+
+
+
+
 	// detial
 #if _USE_DETAIL
 	if (_UV_Polar_Detial > 0)
@@ -418,6 +454,9 @@ half4 frag(v2f i , half4 color)
 	col.a = col.a * t;
 #endif
 
+
+
+
 	// mask
 #if _USE_MASK
 	half4 mask = tex2D(_MaskTex, i.uv1.xy);
@@ -447,16 +486,23 @@ half4 frag(v2f i , half4 color)
 
 	col.rgb = _ChangeColor * lum;  
 #endif
-    col = pow(col, _Power);
+    col = pow(abs(col), _Power);
 	return col;
 }
+
+
+
+
+
+
 
 //=========================================================   输出颜色 ========================================================================================
 
 half4 fragFront(v2f i) : SV_Target
 {
-    half4 col = frag(i, _Color);
-	//half4 col = frag(i);
+    half4 col = frag(i, _Color) * _Glowintensity; 
+	// 使用 _Glowintensity 来调整颜色
+
     return col;
 }
 #endif
