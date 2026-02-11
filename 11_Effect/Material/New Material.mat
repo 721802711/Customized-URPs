@@ -12,8 +12,11 @@ Material:
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords:
+<<<<<<< HEAD
   - _MAINTEX_CHANNEL_ALL
   - _MASKTEX_CHANNEL_ALL
+=======
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
   - _USE_SECONDARYTEX
   m_InvalidKeywords:
   - _AORR_ON
@@ -147,8 +150,11 @@ Material:
     - _DissolveSmooth: 0
     - _DissolveStrength: 0
     - _DissolveWidth: 0
+<<<<<<< HEAD
     - _Dissolve_Speed_U: 0
     - _Dissolve_Speed_V: 0
+=======
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
     - _Distort: 0
     - _DistortFactor: 0.15
     - _DistortStrength: 0
@@ -166,15 +172,22 @@ Material:
     - _Glowintensity: 1
     - _IsParticle: 0
     - _MainTexAngle: 0
+<<<<<<< HEAD
     - _MainTex_Channel: 0
     - _Mask: 0
     - _MaskDistort: 0
     - _MaskDistortStrength: 0.1
+=======
+    - _Mask: 0
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
     - _MaskOne_UV: 0
     - _MaskTexAngle: 0.24
     - _MaskTexAorR: 0
     - _MaskTexRotSpeed: 0
+<<<<<<< HEAD
     - _MaskTex_Channel: 0
+=======
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
     - _MaskUV_one: 0
     - _MaskUvOffset: 0
     - _MaskUvOffsetMain: 0
@@ -217,8 +230,11 @@ Material:
     - _UV_Speed_U_Mask: 0
     - _UV_Speed_V_Main: 0
     - _UV_Speed_V_Mask: 0
+<<<<<<< HEAD
     - _UseCustom2MainUV: 0
     - _UseCustomColor: 0
+=======
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
     - _WorkflowMode: 1
     - _ZWrite: 1
     - _Ztest: 4

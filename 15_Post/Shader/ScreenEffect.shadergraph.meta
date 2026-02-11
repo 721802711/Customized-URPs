@@ -7,4 +7,8 @@ ScriptedImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+<<<<<<< HEAD
   script: {fileID: 11500000, guid: 625f186215c104763be7675aa2d941aa, type: 3}
+=======
+  script: {instanceID: 0}
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0

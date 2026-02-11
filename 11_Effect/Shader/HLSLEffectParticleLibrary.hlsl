@@ -48,11 +48,18 @@ CBUFFER_START(UnityPerMaterial)
 
 	// glow强度
 	half _Glowintensity;
+<<<<<<< HEAD
 	half _UseCustomColor;
 
 	// 副纹理
 	float _SecondaryTex_Speed_U;
 	float _SecondaryTex_Speed_V;
+=======
+
+	// 副纹理
+	half _SecondaryTex_Speed_U;
+	half _SecondaryTex_Speed_V;
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
 
 
 
@@ -135,12 +142,21 @@ CBUFFER_END
 
 TEXTURE2D(_CameraDepthTexture);            SAMPLER(sampler_CameraDepthTexture);
 
+<<<<<<< HEAD
 TEXTURE2D(_MainTex);                       SAMPLER(sampler_MainTex); // 主纹理
 TEXTURE2D(_SecondaryTex);                  SAMPLER(sampler_SecondaryTex); // 副纹理
 TEXTURE2D(_DetailTex);                     SAMPLER(sampler_DetailTex);
 TEXTURE2D(_MaskTex);                       SAMPLER(sampler_MaskTex);
 TEXTURE2D(_DistortTex);                    SAMPLER(sampler_DistortTex);
 TEXTURE2D(_DissolveTex);                   SAMPLER(sampler_DissolveTex);
+=======
+sampler2D _MainTex;                     // 主纹理
+sampler2D _SecondaryTex;                // 副纹理
+sampler2D _DetailTex;
+sampler2D _MaskTex;
+sampler2D _DistortTex;
+sampler2D _DissolveTex;
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
 
 
 
@@ -215,6 +231,20 @@ struct v2f
     float2 uvSec : TEXCOORD1; // SecondaryTex 独立 UV 通道
 #endif
 
+<<<<<<< HEAD
+=======
+
+#if _USE_SECONDARYTEX
+	float2 uvSec : TEXCOORD1; // SecondaryTex 独立 UV 通道
+#endif
+
+
+
+#if _USE_MASK
+	
+	float4 uv3 : TEXCOORD7; 
+	
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
 #if _USE_DISTORT
     // uv1: mask 用或 distort 用
     float4 uv1 : TEXCOORD3;
@@ -310,7 +340,10 @@ v2f vert(appdata v)
     if (_MaskTexWrap.y > 0.5) o.uv1.y = clamp(o.uv1.y, 0.0, 1.0); // V
 #endif
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
 	// 副纹理
 
 #if _USE_SECONDARYTEX
@@ -437,10 +470,23 @@ half4 frag(v2f i , half4 color)
 	col *= secCol;
 #endif
 
+<<<<<<< HEAD
 
 
 
 // detial
+=======
+// 副纹理颜色
+#if _USE_SECONDARYTEX
+	half4 secCol = tex2D(_SecondaryTex, i.uvSec);
+	col *= secCol;
+#endif
+
+
+
+
+	// detial
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
 #if _USE_DETAIL
 	if (_UV_Polar_Detial > 0)
 		i.uv.zw = UVPolar(i.uv.zw, _PolarDetialTiling.zw, _PolarDetialTiling.x, _PolarDetialTiling.y);
@@ -521,7 +567,11 @@ half4 frag(v2f i , half4 color)
 
 
 
+<<<<<<< HEAD
 // mask
+=======
+	// mask
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
 #if _USE_MASK
 	half4 mask = SAMPLE_TEXTURE2D(_MaskTex, sampler_MaskTex, i.uv1.xy); 
 
@@ -573,25 +623,40 @@ half4 frag(v2f i , half4 color)
 
 	col.rgb = _ChangeColor * lum;  
 #endif
+<<<<<<< HEAD
     col = pow(abs(col), _Power); 
 
 
+=======
+    col = pow(abs(col), _Power);
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
 	return col;
 }
 
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
 //=========================================================   输出颜色 ========================================================================================
 
 half4 fragFront(v2f i) : SV_Target
 {
+<<<<<<< HEAD
 
 	_Color *= _Glowintensity;
 	half4 CustomColor = _Color * i.uv3.w; // 使用传入Custom控制强度
 
 
     half4 col = frag(i, lerp(_Color, CustomColor, _UseCustomColor)); 
+=======
+    half4 col = frag(i, _Color) * _Glowintensity; 
+	// 使用 _Glowintensity 来调整颜色
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
 
     return col;
 }

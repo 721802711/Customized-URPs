@@ -1436,7 +1436,11 @@ Transform:
   m_GameObject: {fileID: 1454878511}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: -0.6, y: 0.239, z: -0.087}
+=======
+  m_LocalPosition: {x: -0.648, y: 0.244, z: 0.154}
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1628,6 +1632,7 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+<<<<<<< HEAD
 --- !u!1 &1985503322
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,6 +1997,8 @@ LineRenderer:
   m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 0
+=======
+>>>>>>> 0b82eea11720f7cc005ece233535c8c68fbd06f0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
