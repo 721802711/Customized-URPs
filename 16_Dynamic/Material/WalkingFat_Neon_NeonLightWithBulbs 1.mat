@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: WalkingFat_Neon_NeonLightWithBulbs 1
+  m_Shader: {fileID: 4800000, guid: 8f5870e381db8fa4cb952ba3b6a48d6e, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _CHANNEL_RED
+  - _COLORMODE_TINTCOLOR
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BulbTex:
+        m_Texture: {fileID: 2800000, guid: 2b0f7f6b40870b046b2730e7e9873b3f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ColorTex:
+        m_Texture: {fileID: 2800000, guid: 1205b83b1a8a2e04d894e2935e032b5c, type: 3}
+        m_Scale: {x: 2, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _LineTex:
+        m_Texture: {fileID: 2800000, guid: 2b0f7f6b40870b046b2730e7e9873b3f, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 5800092c02fae414c9f13ee65161a176, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Blend: 0.651
+    - _BulbIntensity: 2
+    - _BulbSpeed: 0.26
+    - _Channel: 1
+    - _ColorIntensity: 2.81
+    - _ColorMode: 0
+    - _FlashSpeed: 3
+    - _FlashSpeedBlue: 0.3
+    - _FlashSpeedRG: 1
+    - _LineIntensity: 1.5
+    - _LineSpeed: 1.5
+    - _LineTiling: 1
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BulbColor: {r: 1, g: 0.29999998, b: 0.29999998, a: 1}
+    - _ColorUVSpeed: {r: -0.5, g: 0, b: 0, a: 0}
+    - _LineColor: {r: 1, g: 0.8, b: 0.29999998, a: 1}
+    - _Tint: {r: 1, g: 0, b: 0, a: 1}
+    - _TintA: {r: 0, g: 0, b: 0, a: 1}
+    - _TintB: {r: 0, g: 0, b: 0, a: 1}
+    - _TintG: {r: 0.78252846, g: 0, b: 2.9960785, a: 1}
+    - _TintR: {r: 2.9960785, g: 0.704572, b: 0, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

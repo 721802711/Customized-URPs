@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: B_13_7_DepthShield
+  m_Shader: {fileID: 4800000, guid: 5625a30f72305a140a37a8dec8545865, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _DEBUG_EDGE_ONLY
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DissolveTex:
+        m_Texture: {fileID: 2800000, guid: dd11328fd94bead45922a265c6e708ec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 10e64cb85dd7e50439ffb61f91bf5313, type: 3}
+        m_Scale: {x: 10, y: 10}
+        m_Offset: {x: 0, y: 0}
+    - _NormalTex:
+        m_Texture: {fileID: 2800000, guid: 63f7eb05726d3d24f8d3800d78ef0f91, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _RampTex:
+        m_Texture: {fileID: 2800000, guid: 1205b83b1a8a2e04d894e2935e032b5c, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BackDepthMulti: 4
+    - _BaseAlpha: 1
+    - _Cull: 0
+    - _CutOff: 0.5
+    - _DebugEdge: 1
+    - _DepthEdgeSize: 3.47
+    - _DepthOffset: 1.06
+    - _DepthPow: 1.92
+    - _DissolveAmount: 0.315
+    - _DissolveEdgeHardness: 0.523
+    - _DissolveEdgeIntensity: 6.52
+    - _DissolveEdgeWidth: 0.039
+    - _DissolveNoiseStrength: 0.445
+    - _DissolveScale: 2
+    - _DistortionStrength: 0.06
+    - _DstBlend: 10
+    - _EdgeHardness: 7.4
+    - _EdgeWidth: 0.41
+    - _Emiss: 3.69
+    - _Fresnel_Fade: 3.06
+    - _Fresnel_Intensity: 0.76
+    - _Light: 1
+    - _NormalScale: 0.084
+    - _RampIntensity: 1.68
+    - _RimPower: 2.33
+    - _SrcBlend: 5
+    - _VectorAnimationTime: 0
+    - _flowedge: 0
+    - _flowspeed: 0
+    - _normaltexU: 0
+    - _normaltexV: 0
+    m_Colors:
+    - _BaseColor: {r: 3.5071914, g: 3.5071914, b: 3.5071914, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DissolveEdgeColor: {r: 0.61176485, g: 1.2316422, b: 2.9960794, a: 1}
+    - _EdgeColor: {r: 0.42988092, g: 1, b: 0.08962262, a: 1}
+    - _FlowSpeed: {r: 0.1, g: 0.1, b: 0, a: 0}
+    - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}
+    - _VectorAimount: {r: 0, g: 0, b: 0, a: 0}
+    - _flowcolor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

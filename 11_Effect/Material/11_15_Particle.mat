@@ -24,7 +24,9 @@ Material:
   m_Shader: {fileID: 4800000, guid: fa934c961a705b14985297a014bd60a4, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _MAINTEX_CHANNEL_ALL
+  - _MASKTEX_CHANNEL_ALL
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -65,6 +67,8 @@ Material:
     - _DissolveSmooth: 0
     - _DissolveStrength: 0
     - _DissolveWidth: 0
+    - _Dissolve_Speed_U: 0
+    - _Dissolve_Speed_V: 0
     - _DistortStrength: 0
     - _DistortTexRotSpeed: 0
     - _DistortTex_Speed_U: 0
@@ -72,10 +76,14 @@ Material:
     - _DstBlend: 10
     - _Glowintensity: 1
     - _MainTexAngle: 0
+    - _MainTex_Channel: 0
+    - _MaskDistort: 0
+    - _MaskDistortStrength: 0.1
     - _MaskOne_UV: 0
     - _MaskTexAngle: 0
     - _MaskTexAorR: 0
     - _MaskTexRotSpeed: 0
+    - _MaskTex_Channel: 0
     - _MaskUV_one: 0
     - _MaskUvOffset: 0
     - _MaskUvOffsetMain: 0
@@ -102,6 +110,8 @@ Material:
     - _UV_Speed_U_Mask: 0
     - _UV_Speed_V_Main: 0
     - _UV_Speed_V_Mask: 0
+    - _UseCustom2MainUV: 0
+    - _UseCustomColor: 0
     - _cull: 0
     - _speedU: 0
     - _speedV: 0

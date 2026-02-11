@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 17_Glitter
+  m_Shader: {fileID: 4800000, guid: 9a0a93f5d01f30b488371f8642b041bf, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 2e10d8f982cdd0e4ea64da226f8e64f1, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 3841ce4a04d74f34f9000a2ff6414012, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 2800000, guid: 2e10d8f982cdd0e4ea64da226f8e64f1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _DiffuseFactor: 2
+    - _FlickerIntensity: 1.5
+    - _GlitterOffset: 4.83
+    - _GlitterPower: 0.81
+    - _GlitterThreshold: 0.515
+    - _HeightFactor: 0.05
+    - _NoiseRotationSpeed: 25.31
+    - _NoiseScale: 2.02
+    - _NoiseSize: 2
+    - _NoiseStrength: 2.5
+    - _PowValue: 1
+    - _Power: 16
+    - _RimIntensity: 1
+    - _RimPower: 3
+    - _ShiningSpeed: 0.01
+    - _SparkleIntensity: 22.01
+    - _SparklePower: 6
+    - _SpecIntensity: 0.6
+    - _Specular: 1
+    - _UseNoiseColor: 0
+    - _diffsparkleRate: 3.1
+    - _gloss: 0.782
+    - _rimsparkleRate: 60
+    - _specsparkleRate: 20
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 0.5529412, b: 0.07058824, a: 1}
+    - _GlitterColor: {r: 1, g: 1, b: 1, a: 1}
+    - _NoiseOffset: {r: 1.44, g: 1.17, b: 0.98, a: 0}
+    - _RimColor: {r: 0.9137255, g: 0.44705883, b: 0.09803922, a: 1}
+    - _ShadowColor: {r: 0.3764706, g: 0, b: 0, a: 1}
+    - _SparkleColor: {r: 1, g: 0.85490197, b: 0.09803922, a: 1}
+    - _SpecColor: {r: 1, g: 0.85118765, b: 0.4292453, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

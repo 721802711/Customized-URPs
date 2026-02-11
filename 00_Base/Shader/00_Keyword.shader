@@ -58,8 +58,9 @@ Shader "B/00_Keyword"
             half4 frag (v2f i) : SV_Target
             {
 
-                half4 col = SAMPLE_TEXTURE2D(_MainTex,sampler_MainTex,i.uv);
+                half4 baseCol = SAMPLE_TEXTURE2D(_MainTex,sampler_MainTex,i.uv);
 
+                half4 col = baseCol;
 
                 #if _PARALLAXMAP_UP
                     // 代码块，当PARALLAXMAP_UP关键字被启用时执行

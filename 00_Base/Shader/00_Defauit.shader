@@ -3,8 +3,6 @@ Shader "B/00_Defauit"
     Properties
     {
         _MainTex ("Texture", 2D) = "white" {}
-
-
     }
     SubShader
     {
@@ -44,6 +42,7 @@ Shader "B/00_Defauit"
             #pragma fragment frag
 
 
+
             v2f vert (appdata v)
             {
                 v2f o;
@@ -58,11 +57,12 @@ Shader "B/00_Defauit"
             half4 frag (v2f i) : SV_Target
             {
 
-                half4 col = SAMPLE_TEXTURE2D(_MainTex,sampler_MainTex,i.uv);
+                half4 baseCol = SAMPLE_TEXTURE2D(_MainTex,sampler_MainTex,i.uv);
+
+                half4 col = baseCol;
 
 
-
-                return col.r;
+                return col;
             }
             ENDHLSL
         }

@@ -38,10 +38,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _Direction: 1
-    - _DistanceEffect: 0.896
-    - _EdgeLength: 0.1
+    - _DistanceEffect: 0.819
+    - _EdgeLength: 0.0729
     - _MaxBorderX: 0.5
     - _MinBorderX: -0.5
-    - _Threshold: 0.397
+    - _Threshold: 0.232
     m_Colors: []
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

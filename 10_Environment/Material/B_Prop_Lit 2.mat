@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: B_Prop_Lit 2
+  m_Shader: {fileID: 4800000, guid: 0224dd17125e7394daa8b1856245831e, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 55ccf00b1f8d63a429fb291aad899ae8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionCube:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _CameraFarFadeDistance: 2
+    - _CameraNearFadeDistance: 12.63
+    - _Cull: 0
+    - _FresnelPower: 0
+    - _GlassEffectOpacity: 0.743
+    - _MainTexIntensity: 1
+    - _MainTexOpacity: 1
+    - _NormalScale: 0
+    - _Opacity: 0.837
+    - _ReflectBlur: 1
+    - _ReflectHDRClamp: 0
+    - _ReflectIntensity: 0
+    - _RefractionStrength: 0.0345
+    - _Smoothness: 1
+    - _SoftParticlesFarFadeDistance: 4.84
+    - _SoftParticlesNearFadeDistance: -25.5
+    - _SpecularIntensity: 0
+    m_Colors:
+    - _BaseColor: {r: 0.98713654, g: 1.7699894, b: 9.965379, a: 1}
+    - _FresnelColor: {r: 0, g: 0, b: 0, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

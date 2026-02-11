@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: B_URP_Sparkle01_URP
+  m_Shader: {fileID: 4800000, guid: 26f5ccbe1bfea2945a455d765aa77222, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 3841ce4a04d74f34f9000a2ff6414012, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 2800000, guid: 2e10d8f982cdd0e4ea64da226f8e64f1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - SparklePower: 6
+    - _Gloss: 0.6
+    - _HeightFactor: 0
+    - _NoiseSize: 2
+    - _RimIntensity: 1
+    - _RimPower: 3
+    - _ShiningSpeed: 0.01
+    - _Specular: 1
+    - _diffsparkleRate: 11.2
+    - _rimsparkleRate: 60
+    - _specsparkleRate: 22.87
+    m_Colors:
+    - _RimColor: {r: 0.9150943, g: 0.44698504, b: 0.09927912, a: 1}
+    - _ShadowColor: {r: 0.3773585, g: 0, b: 0, a: 1}
+    - _SparkleColor: {r: 1, g: 0.8552946, b: 0.0990566, a: 1}
+    - _SpecularColor: {r: 1, g: 0.98638093, b: 0.2688679, a: 1}
+    - _Tint: {r: 1, g: 0.55261636, b: 0.07075471, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

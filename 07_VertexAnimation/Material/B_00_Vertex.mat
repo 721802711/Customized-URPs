@@ -31,7 +31,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _BottomY: 0
-    - _Control: 0
+    - _Control: 1
     - _Dir: 0
     - _DstBlend: 10
     - _MoveRange: 1
@@ -42,3 +42,4 @@ Material:
     - _cull: 0
     m_Colors: []
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

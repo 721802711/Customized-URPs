@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 10_07_UnlitFresnel
+  m_Shader: {fileID: 4800000, guid: 6cd7449c18dbbcf49b3e5729e6ff695a, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords:
+  - _USEDEPTHFADE_ON
+  - _USEFRESNEL_ON
+  - _USEINTERSECTION_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 68bb01881d16b784abb93998282fc267, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 7dab35079d3c08e43b2e2e6fbf54ec27, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BumpScale: 1
+    - _DepthFadeDistance: 1.77
+    - _DstBlend: 0
+    - _FresnelBlendMode: 1
+    - _FresnelInverse: 0
+    - _Fresnel_Fade: 2.63
+    - _Fresnel_Intensity: 1.92
+    - _RimIntensity: 1.443
+    - _RimPower: 3.36
+    - _SrcBlend: 1
+    - _UseDepthFade: 1
+    - _UseFresnel: 1
+    - _UseIntersection: 1
+    - _UseOutline: 0
+    - _UseTexture: 0
+    - _ZWrite: 0
+    m_Colors:
+    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BumpMap_Speed: {r: 0, g: 0, b: 0, a: 0}
+    - _FresnelColor: {r: 0.7490196, g: 0.7490196, b: 0.7490196, a: 1}
+    - _IntersectionColor: {r: 0, g: 1, b: 1, a: 1}
+    - _MainTexFlow: {r: 0, g: 0, b: 0, a: 0}
+    - _MainTex_Speed: {r: 0.25, g: 0, b: 0, a: 0}
+    - _OutlineColor: {r: 1, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

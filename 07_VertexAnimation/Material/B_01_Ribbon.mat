@@ -29,13 +29,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amplitude: 0.2
+    - _Amplitude: 0.349
     - _DstBlend: 10
     - _MoveRange: 6.72
-    - _MoveSpeed: 2.682
-    - _Scale: 5
+    - _MoveSpeed: 1.721
+    - _Scale: 5.76
     - _SrcBlend: 5
     - _TimeScale: 0
     - _cull: 0
     m_Colors: []
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

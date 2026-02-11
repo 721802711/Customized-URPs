@@ -37,7 +37,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _EdgeLength: 0.1552
-    - _Threshold: 0.304
+    - _EdgeLength: 0.1804
+    - _Threshold: 0.357
     m_Colors: []
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

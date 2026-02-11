@@ -41,17 +41,18 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _AshDensity: 0.468
-    - _AshWidth: 0.089
-    - _DistanceEffect: 0.577
-    - _EdgeLength: 0.075
+    - _AshDensity: 0.266
+    - _AshWidth: 0.024
+    - _DistanceEffect: 0.869
+    - _EdgeLength: 0.1219
     - _FlyIntensity: 0.214
     - _MaxBorderY: 1.68
     - _MinBorderY: -1
-    - _Threshold: 0.653
+    - _Threshold: 0.532
     m_Colors:
     - _AshColor: {r: 0.16981131, g: 0, b: 0, a: 1}
     - _EdgeFirstColor: {r: 1, g: 1, b: 1, a: 1}
     - _EdgeSecondColor: {r: 1, g: 1, b: 1, a: 1}
     - _FlyDirection: {r: -1, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

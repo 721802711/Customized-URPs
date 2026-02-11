@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 11_15_Particle 1
+  m_Shader: {fileID: 4800000, guid: fa934c961a705b14985297a014bd60a4, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _MAINTEX_CHANNEL_ALL
+  - _MASKTEX_CHANNEL_ALL
+  - _USE_DISTORT
+  - _USE_MASK
+  - _USE_SECONDARYTEX
+  m_InvalidKeywords:
+  - _DISSOLVEDISTORT_ON
+  - _MASKDISTORT_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DissolveTex:
+        m_Texture: {fileID: 2800000, guid: f71e31f1c0043b8499f704a193268508, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DistortTex:
+        m_Texture: {fileID: 2800000, guid: f71e31f1c0043b8499f704a193268508, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: a31ee759cc7956f4e8447fa64634bb41, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskTex:
+        m_Texture: {fileID: 2800000, guid: cf5a159747b3af2468ca85f8d7b71eec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondaryTex:
+        m_Texture: {fileID: 2800000, guid: 93087dffe3a5b6442a2aba83a9845970, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _AorR: 0
+    - _DissolveAlpha: 0
+    - _DissolveDistort: 1
+    - _DissolveSmooth: 0
+    - _DissolveStrength: 0.015
+    - _DissolveWidth: 0
+    - _Dissolve_Speed_U: -2.41
+    - _Dissolve_Speed_V: 0
+    - _DistortStrength: 0.12
+    - _DistortTexRotSpeed: 0
+    - _DistortTex_Speed_U: 0.35
+    - _DistortTex_Speed_V: 0
+    - _DstBlend: 10
+    - _Glowintensity: 3.77
+    - _MainTexAngle: 0
+    - _MainTex_Channel: 0
+    - _MaskDistort: 1
+    - _MaskDistortStrength: 0.044
+    - _MaskOne_UV: 0
+    - _MaskTexAngle: 0
+    - _MaskTexAorR: 0
+    - _MaskTexRotSpeed: 0
+    - _MaskTex_Channel: 0
+    - _MaskUV_one: 0
+    - _MaskUvOffset: 0
+    - _MaskUvOffsetMain: 0
+    - _Power: 1
+    - _RimAlpha: 0
+    - _RimPower: 1
+    - _RimRevert: 0
+    - _SecondaryTex_Speed_U: 0
+    - _SecondaryTex_Speed_V: 0
+    - _SoftFade: 1
+    - _SrcBlend: 5
+    - _Toggle_USE_CHANGECOLOR_ON: 0
+    - _Toggle_USE_DISSOLVE_ON: 0
+    - _Toggle_USE_DISTORT_ON: 1
+    - _Toggle_USE_RIM_ON: 0
+    - _Toggle_USE_SOFTPARTICLE_ON: 0
+    - _USE_MASK: 1
+    - _USE_SECONDARYTEX: 1
+    - _UVRot: 0
+    - _UVRot_DistortTex: 0
+    - _UVRot_Mask: 0
+    - _UV_Polar_Main: 0
+    - _UV_Speed_U_Main: 0
+    - _UV_Speed_U_Mask: 0
+    - _UV_Speed_V_Main: 0
+    - _UV_Speed_V_Mask: 0
+    - _UseCustom2MainUV: 0
+    - _UseCustomColor: 0
+    - _cull: 0
+    - _speedU: 0.007
+    - _speedV: 0
+    - _zTest: 4
+    - _zWrite: 0
+    m_Colors:
+    - _ChangeColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _DissolveColor: {r: 205.51157, g: 39.745155, b: 39.745155, a: 1}
+    - _MaskTexColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PolarMainTiling: {r: 1, g: 1, b: 0, a: 0}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

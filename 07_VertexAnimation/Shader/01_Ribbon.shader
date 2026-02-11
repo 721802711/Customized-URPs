@@ -65,7 +65,7 @@ Shader "B/01_Ribbon"
                 v.positionOS.y +=  _Amplitude * 0.5 * sin(v.positionOS.x * _Scale +  _Time.y * _MoveSpeed) *  v.texcoord.y;
                 v.positionOS.x +=  _Amplitude  * sin(v.positionOS.z * _Scale +  _Time.y * _MoveSpeed) *  v.texcoord.y;
 
-
+                // 基础顶点变换
                 VertexPositionInputs  PositionInputs = GetVertexPositionInputs(v.positionOS.xyz); // 获取顶点位置输入
                 o.positionCS = PositionInputs.positionCS;    // 转换到齐次空间位置
 

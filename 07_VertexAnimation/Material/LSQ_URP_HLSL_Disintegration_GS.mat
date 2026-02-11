@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: LSQ_URP_HLSL_Disintegration_GS
+  m_Shader: {fileID: 4800000, guid: 01af1bf5e6ee77546a7cfd4eb15d4773, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _DissolveTexture:
+        m_Texture: {fileID: 2800000, guid: 981b1a1fde8e2c64eafbb2113617b6c9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _FlowMap:
+        m_Texture: {fileID: 2800000, guid: d23c34a087e83484ea442916122a2cbe, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: e1e2df141cc16584c88e08a9f3d0c4f3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParticleShape:
+        m_Texture: {fileID: 2800000, guid: 80fe0326f0895d14f802c2ce242d56d1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _DissolveBorderWidth: 0.11
+    - _Exapnd: 1.5
+    - _Gloss: 8
+    - _ParticleLit: 0
+    - _ParticleRadius: 0.05
+    - _Weight: 0.155
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Direction: {r: 1, g: 2, b: 0.5, a: 0}
+    - _DissolveBorderColor: {r: 1, g: 0.72059333, b: 0.504717, a: 1}
+    - _ParticleColor: {r: 1, g: 0.2216981, b: 0.2216981, a: 1}
+    - _Specular: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

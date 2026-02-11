@@ -1,8 +1,18 @@
+/*
+ Custom 参数的使用说明
+ x：控制溶解
+ y: 控制Mask的U方向偏移
+ z: 控制Mask的V方向偏移
+ w：控制整体亮度
+
+*/
+
 #ifndef  __EFFECT_PARTICLE_PASS_INCLUDED__
 #define  __EFFECT_PARTICLE_PASS_INCLUDED__
 
 #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
 #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/Common.hlsl"
+
 
 //=========================================================属性========================================================================================
 
@@ -14,7 +24,9 @@ CBUFFER_START(UnityPerMaterial)
 	float4 _MaskTex_ST;	
 	float4 _DistortTex_ST;
 	float4 _DissolveTex_ST;
+	float4 _SecondaryTex_ST;
 
+	// 颜色
 	half4 _Color;
 	half4 _DetailColor;
 	half4 _MaskTexColor;
@@ -26,12 +38,22 @@ CBUFFER_START(UnityPerMaterial)
 	half4 _PolarMainTiling;	
 	half4 _PolarDetialTiling;
 
+	half2 _MainTexWrap; // 新增变量，控制主贴图 WrapMode (U,V)
 	half _Alpha;
 	half _Power;
 	half _AorR;
 	half _UVRot;
 	half _SoftFade;
 	half _UV2;
+
+	// glow强度
+	half _Glowintensity;
+	half _UseCustomColor;
+
+	// 副纹理
+	float _SecondaryTex_Speed_U;
+	float _SecondaryTex_Speed_V;
+
 
 
 	//边缘光
@@ -44,13 +66,16 @@ CBUFFER_START(UnityPerMaterial)
 	half _UV_Polar_Main;
 	half _MainTexAngle;
 
+
+	float _UseCustom2MainUV; // 新增变量，控制是否使用 Custom2 作为主贴图 UV 偏移
+
 	// uv速度
-	half _UV_Speed_U_Main;
-	half _UV_Speed_V_Main;
+	float _UV_Speed_U_Main;
+	float _UV_Speed_V_Main;
 
 	half _UV_Polar_Detial;
-	half _UV_Speed_U_Detail;
-	half _UV_Speed_V_Detail;
+	float _UV_Speed_U_Detail;
+	float _UV_Speed_V_Detail;
 	half _DetailTexAngle;
 	half _DetailTexColorAdd;
 	half _DetailTexColorLerp;
@@ -60,9 +85,12 @@ CBUFFER_START(UnityPerMaterial)
 	
 
 	// 遮罩
-	half _UV_Speed_U_Mask;
-	half _UV_Speed_V_Mask;
+	float _UV_Speed_U_Mask;
+	float _UV_Speed_V_Mask;
 	half _MaskTexAngle;
+
+	half2 _MaskTexWrap; // 新增变量，控制遮罩贴图 WrapMode (U,V)
+
 
 	half _UVRot_Mask;
 	half _MaskTexAorR;
@@ -72,15 +100,17 @@ CBUFFER_START(UnityPerMaterial)
 	half _MaskOne_UV;
 	half _MaskUV_one;
 
-	half _speedU;
-	half _speedV;
+	float _speedU;
+	float _speedV;
 
+	half _MaskDistort;  // 新增变量，控制遮罩是否开启扭曲
+	half _MaskDistortStrength; // 遮罩扭曲强度
 
 	// 扭曲
 
 	half _DistortStrength;
-	half _DistortTex_Speed_U;
-	half _DistortTex_Speed_V;
+	float _DistortTex_Speed_U;
+	float _DistortTex_Speed_V;
 	half _DistortTexStrengthAir;
 	half _UVRot_DistortTex;
 	half _DistortTexRotSpeed;
@@ -93,20 +123,27 @@ CBUFFER_START(UnityPerMaterial)
 	half _DissolveSmooth;
 	half _DissolveDistort;
 
+
+	float _Dissolve_Speed_U;
+	float _Dissolve_Speed_V;
+
+
+	half _UV_Speed_U_Main_Mirror;
+	half _UV_Speed_V_Main_Mirror;
+
 CBUFFER_END
 
-sampler2D _CameraDepthTexture;            SAMPLER(sampler_CameraDepthTexture);
+TEXTURE2D(_CameraDepthTexture);            SAMPLER(sampler_CameraDepthTexture);
 
-sampler2D _MainTex;
-sampler2D _DetailTex;
-sampler2D _MaskTex;
-sampler2D _DistortTex;
-sampler2D _DissolveTex;
+TEXTURE2D(_MainTex);                       SAMPLER(sampler_MainTex); // 主纹理
+TEXTURE2D(_SecondaryTex);                  SAMPLER(sampler_SecondaryTex); // 副纹理
+TEXTURE2D(_DetailTex);                     SAMPLER(sampler_DetailTex);
+TEXTURE2D(_MaskTex);                       SAMPLER(sampler_MaskTex);
+TEXTURE2D(_DistortTex);                    SAMPLER(sampler_DistortTex);
+TEXTURE2D(_DissolveTex);                   SAMPLER(sampler_DissolveTex);
 
 
 
-half _UV_Speed_U_Main_Mirror;
-half _UV_Speed_V_Main_Mirror;
 
 //=====================================================   函数 ================================================================================================
 
@@ -151,6 +188,7 @@ struct appdata
 	float4 uv1 : TEXCOORD1;
 	half4 color : COLOR;
     float4 texcoord1 : TEXCOORD2;                     //定义使用custom变量
+	float4 custom2 : TEXCOORD3;                     //定义使用custom2变量
 #if _USE_RIM
 	float3 normal : NORMAL;
 #endif
@@ -161,46 +199,43 @@ struct appdata
 struct v2f
 {
 #if _USE_DETAIL
-	float4 uv : TEXCOORD0;
+    float4 uv : TEXCOORD0;
 #else 
-	float2 uv : TEXCOORD0;
+    float2 uv : TEXCOORD0;
 #endif
 
-	half4 color : COLOR;
-	float4 vertex : SV_POSITION;
+    half4 color : COLOR;
+    float4 vertex : SV_POSITION;
 
-#if (defined(_USE_SOFTPARTICLE))
-		float4 projPos : TEXCOORD2;
+#if defined(_USE_SOFTPARTICLE)
+    float4 projPos : TEXCOORD2;
 #endif
 
-#if _USE_MASK
-	
-	float4 uv3 : TEXCOORD7; 
-	
+#if _USE_SECONDARYTEX
+    float2 uvSec : TEXCOORD1; // SecondaryTex 独立 UV 通道
+#endif
+
 #if _USE_DISTORT
-	float4 uv1 : TEXCOORD3;
+    // uv1: mask 用或 distort 用
+    float4 uv1 : TEXCOORD3;
 #else
-	float2 uv1 : TEXCOORD3;
-#endif
-#else
-#if _USE_DISTORT
-	float2 uv1 : TEXCOORD3;
-#endif
-	
-#endif
-
-#if _USE_RIM
-	float3 viewDir : TEXCOORD4;
-	half3 normal : TEXCOORD5;
+    float2 uv1 : TEXCOORD3;
 #endif
 
 #if _USE_DISSOLVE
-	float2 uv2 : TEXCOORD6;
-#if !_USE_MASK                                 // 如果不开启 Mask 就定义 UV3 
-	float4 uv3 : TEXCOORD7; 
+    float2 uv2 : TEXCOORD6;
 #endif
+
+#if _USE_RIM
+    float3 viewDir : TEXCOORD4;
+    half3 normal : TEXCOORD5;
+#endif
+
+	//  始终定义 uv3，无论是否使用 mask 或 dissolve
+    float4 uv3 : TEXCOORD7;
 	
-#endif
+	float4 custom2 : TEXCOORD8; // 传递 custom2 变量
+	
 };
 
 
@@ -214,6 +249,9 @@ v2f vert(appdata v)
 	o.uv.xy = TRANSFORM_TEX(v.uv, _MainTex);
 	o.color = v.color;
 
+	o.uv3 = v.texcoord1;
+
+	o.custom2 = v.custom2;   // 传给片元
 
 	if (_UVRot != 0)
 	{
@@ -233,38 +271,54 @@ v2f vert(appdata v)
 
 #endif
 
-	// mask
+// mask
 #if _USE_MASK
-	o.uv1.xy = TRANSFORM_TEX(v.uv, _MaskTex);
-	o.uv3 = v.texcoord1;
-	half2 uvMaskSpeed = UVSpeed(_UV_Speed_U_Mask, _UV_Speed_V_Mask);
-	half2 oneMaskUV = half2(_speedU, _speedV);
-	half2 oneMaskcUSTOMUV = half2(o.uv3.y, o.uv3.z);
-	half2 MsakUV_oneCustom = lerp(oneMaskUV, oneMaskcUSTOMUV, _MaskOne_UV);       //启用Custom Y
-	
-	half2 MsakUV = lerp(uvMaskSpeed, MsakUV_oneCustom, _MaskUV_one);       
+    // 基础 UV
+    o.uv1.xy = TRANSFORM_TEX(v.uv, _MaskTex);
+    o.uv3 = v.texcoord1;
 
-	if (_UVRot_Mask != 0)
-	{
-		half2 uvMaskRot = UVRotate(o.uv1.xy, _MaskTexAngle + _MaskTexRotSpeed * _Time.y);
-		o.uv1.xy = uvMaskRot + uvMaskSpeed;
-	}
-	else
-	{
-		o.uv1.xy += MsakUV;
-	}
+    // UV 移动速度
+    half2 uvMaskSpeed = UVSpeed(_UV_Speed_U_Mask, _UV_Speed_V_Mask);
 
-	if (_MaskUvOffsetMain !=0)
+    // 一次性模式（Custom Y 控制）
+    half2 oneMaskUV       = half2(_speedU, _speedV);
+    half2 oneMaskCustomUV = half2(o.uv3.y, o.uv3.z);
+    half2 maskUV_One      = lerp(oneMaskUV, oneMaskCustomUV, _MaskOne_UV);
+
+    // 在循环模式和一次性模式之间切换
+    half2 maskUV = lerp(uvMaskSpeed, maskUV_One, _MaskUV_one);
+
+    // UV 旋转
+    if (_UVRot_Mask != 0)
     {
-       o.uv1.x += v.uv1.x * _MaskUvOffset;
-	  
+        half2 uvMaskRot = UVRotate(o.uv1.xy, _MaskTexAngle + _MaskTexRotSpeed * _Time.y);
+        o.uv1.xy = uvMaskRot + uvMaskSpeed;
     }
-	else{}
+    else
+    {
+        o.uv1.xy += maskUV;
+    }
 
-	
-	
-	
+    // UV 偏移
+    if (_MaskUvOffsetMain != 0)
+    {
+        o.uv1.x += v.uv1.x * _MaskUvOffset;
+    }
+
+    // WrapMode (仅 Shader 内部做 Clamp，不影响 Import 设置)
+    if (_MaskTexWrap.x > 0.5) o.uv1.x = clamp(o.uv1.x, 0.0, 1.0); // U
+    if (_MaskTexWrap.y > 0.5) o.uv1.y = clamp(o.uv1.y, 0.0, 1.0); // V
 #endif
+
+
+	// 副纹理
+
+#if _USE_SECONDARYTEX
+	o.uvSec = TRANSFORM_TEX(v.uv, _SecondaryTex);
+	o.uvSec += UVSpeed(_SecondaryTex_Speed_U, _SecondaryTex_Speed_V);
+#endif
+
+
 
 	// distort
 #if _USE_DISTORT
@@ -323,32 +377,70 @@ v2f vert(appdata v)
 
 half4 frag(v2f i , half4 color)
 {
-	if (_UV_Polar_Main > 0)
-		i.uv.xy = UVPolar(i.uv.xy, _PolarMainTiling.zw, _PolarMainTiling.x, _PolarMainTiling.y);
+    float2 mainUV = i.uv;
 
-	// uv speed
-	half2 uvMainSpeed = UVSpeed(_UV_Speed_U_Main, _UV_Speed_V_Main);
-	uvMainSpeed.x = lerp(uvMainSpeed.x, -uvMainSpeed.x, _UV_Speed_U_Main_Mirror);
-	uvMainSpeed.y = lerp(uvMainSpeed.y, -uvMainSpeed.y, _UV_Speed_V_Main_Mirror);
-	i.uv.xy += uvMainSpeed;
+    // 极坐标 UV 转换
+    if (_UV_Polar_Main > 0)
+    {
+        mainUV = UVPolar(mainUV, _PolarMainTiling.zw, _PolarMainTiling.x, _PolarMainTiling.y);
+    }
 
-	// distort
-#if _USE_DISTORT
-#if _USE_MASK
-	half4 distortTex = tex2D(_DistortTex, i.uv1.zw);
-#else
-	half4 distortTex = tex2D(_DistortTex, i.uv1.xy);
+    // Custom2 或者 UVSpeed 偏移
+    #if defined(_USE_CUSTOM2_MAINUV)
+        // 使用 Custom2.xy 控制主纹理UV
+        mainUV += i.custom2.xy;
+    #else
+        // 默认循环 UV 偏移
+        half2 uvMainSpeed = UVSpeed(_UV_Speed_U_Main, _UV_Speed_V_Main);
+        uvMainSpeed.x = lerp(uvMainSpeed.x, -uvMainSpeed.x, _UV_Speed_U_Main_Mirror);
+        uvMainSpeed.y = lerp(uvMainSpeed.y, -uvMainSpeed.y, _UV_Speed_V_Main_Mirror);
+        mainUV += uvMainSpeed;
+    #endif
+
+    //Distort 扰动
+    half distort = 0;
+    #if _USE_DISTORT
+        #if _USE_MASK
+            half4 distortTex = SAMPLE_TEXTURE2D(_DistortTex, sampler_DistortTex, i.uv1.zw);
+        #else
+            half4 distortTex = SAMPLE_TEXTURE2D(_DistortTex, sampler_DistortTex, i.uv1.xy);
+        #endif
+        distort = distortTex.a * distortTex.r;
+        mainUV += distort * _DistortStrength;
+    #endif
+
+    // 4. WrapMode 控制（仅 Shader 内部做 Clamp，不改贴图设置）
+    if (_MainTexWrap.x > 0.5) mainUV.x = clamp(mainUV.x, 0, 1);
+    if (_MainTexWrap.y > 0.5) mainUV.y = clamp(mainUV.y, 0, 1);
+
+
+    half4 col = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, mainUV);
+
+    // 主贴图通道关键字控制（使用 multi_compile 定义的关键字）
+    #if defined(_MAINTEX_CHANNEL_R)
+        col = half4(col.r, col.r, col.r, col.a);
+    #elif defined(_MAINTEX_CHANNEL_G)
+        col = half4(col.g, col.g, col.g, col.a);
+    #elif defined(_MAINTEX_CHANNEL_B)
+        col = half4(col.b, col.b, col.b, col.a);
+    #elif defined(_MAINTEX_CHANNEL_A)
+        col = half4(col.a, col.a, col.a, col.a);
+    #elif defined(_MAINTEX_CHANNEL_ALL)
+        
+		col = half4(col.rgb, col.a);
+    #endif
+
+
+// 副纹理颜色
+#if _USE_SECONDARYTEX
+	half4 secCol = SAMPLE_TEXTURE2D(_SecondaryTex, sampler_SecondaryTex, i.uvSec);
+	col *= secCol;
 #endif
-	half distort = distortTex.a * distortTex.r;
 
-	half4 col = tex2D(_MainTex, i.uv + distort * _DistortStrength);
 
-#else
-    
-    half4 col = tex2D(_MainTex, i.uv);
-#endif
 
-	// detial
+
+// detial
 #if _USE_DETAIL
 	if (_UV_Polar_Detial > 0)
 		i.uv.zw = UVPolar(i.uv.zw, _PolarDetialTiling.zw, _PolarDetialTiling.x, _PolarDetialTiling.y);
@@ -357,9 +449,9 @@ half4 frag(v2f i , half4 color)
 	i.uv.zw += uvDetailSpeed;
 
 #if _USE_DISTORT
-	half4 detail = tex2D(_DetailTex, i.uv.zw + distort);
+	half4 detail = SAMPLE_TEXTURE2D(_DetailTex, sampler_DetailTex, i.uv.zw + distort);
 #else
-	half4 detail = tex2D(_DetailTex, i.uv.zw);
+	half4 detail = SAMPLE_TEXTURE2D(_DetailTex, sampler_DetailTex, i.uv.zw);
 #endif
 
 	detail *= _DetailColor;
@@ -371,9 +463,10 @@ half4 frag(v2f i , half4 color)
 #endif
 	float tex_r = col.r;                                                     //提取贴图的Alpha通道
 	col = col * color * i.color;
-    col.a = saturate(lerp(col.a, tex_r, _AorR) * _Alpha);
 
-	// rim
+	col.a = saturate(lerp(col.a, tex_r, _AorR) * _Alpha * i.color.a);
+
+// rim
 #if _USE_RIM
 	half rim = 1.0 - saturate(dot(i.viewDir, i.normal));
 	rim = saturate(pow(rim, _RimPower));
@@ -391,46 +484,79 @@ half4 frag(v2f i , half4 color)
 
 #endif
 
-	// dissolve
+// dissolve
 #if _USE_DISSOLVE
+
+    float2 dissolveUV = i.uv2.xy + UVSpeed(_Dissolve_Speed_U, _Dissolve_Speed_V) + i.uv3.yz;
+
 #if _USE_DISTORT
-	half dissolve = tex2D(_DissolveTex, i.uv2.xy);
-	half dissolve_dis = tex2D(_DissolveTex, i.uv2.xy + distort * _DistortStrength);
-	dissolve = lerp(dissolve, dissolve_dis, _DissolveDistort);
+
+    float2 dissolveUV_distort = dissolveUV + distort * _DistortStrength;
+
+    half dissolve = SAMPLE_TEXTURE2D(_DissolveTex, sampler_DissolveTex, dissolveUV).r;
+    half dissolve_dis = SAMPLE_TEXTURE2D(_DissolveTex, sampler_DissolveTex, dissolveUV_distort).r;
+    dissolve = lerp(dissolve, dissolve_dis, _DissolveDistort);
 #else
-	half dissolve = tex2D(_DissolveTex, i.uv2.xy);
+
+    half dissolve = SAMPLE_TEXTURE2D(_DissolveTex, sampler_DissolveTex, dissolveUV).r;
 #endif
 
 
-	half dissAmount = lerp(_DissolveStrength, i.uv3.x, _DissolveAlpha);       //启用Custom
-	
-	half test = saturate(dissolve - dissAmount);
+  
+    half dissAmount = saturate(lerp(_DissolveStrength, i.uv3.x, _DissolveAlpha));
+
+    half test = saturate(dissolve - dissAmount);
+    half smooth = lerp(0, _DissolveSmooth, dissAmount);
+    half t = smoothstep(0, smooth, test);
+
+    half width = step(t + _DissolveWidth, _DissolveSmooth);
+    half Dissolve = step(t, _DissolveSmooth);
+    half3 WidthColor = (Dissolve - width) * _DissolveColor;
 
 
-	half smooth = lerp(0, _DissolveSmooth, dissAmount);
-	half t = smoothstep(0, smooth, test);
-	
-	half width = step(t + _DissolveWidth , _DissolveSmooth);
-	half Dissolve = step(t, _DissolveSmooth);
-	half3 WidthColor = (Dissolve - width) * _DissolveColor;
-	
-	col.rgb = col.rgb + WidthColor ;
-	col.a = col.a * t;
+    col.rgb += WidthColor;
+    col.a *= t;
 #endif
 
-	// mask
+
+
+
+// mask
 #if _USE_MASK
-	half4 mask = tex2D(_MaskTex, i.uv1.xy);
+	half4 mask = SAMPLE_TEXTURE2D(_MaskTex, sampler_MaskTex, i.uv1.xy); 
+
+#if _USE_DISTORT
+    // 扭曲UV
+    float2 maskUV_distort = i.uv1.xy + distort * _MaskDistortStrength;	  // 使用遮罩扭曲强度控制扭曲效果
+	half4 mask_dis = SAMPLE_TEXTURE2D(_MaskTex, sampler_MaskTex, maskUV_distort);
+	mask = lerp(mask, mask_dis, _MaskDistort);
+#endif
+
+	// 贴图通道关键字
+    #if defined(_MASKTEX_CHANNEL_R)
+        mask = half4(mask.r, mask.r, mask.r, mask.a);
+    #elif defined(_MASKTEX_CHANNEL_G)
+        mask = half4(mask.g, mask.g, mask.g, mask.a);
+    #elif defined(_MASKTEX_CHANNEL_B)
+        mask = half4(mask.b, mask.b, mask.b, mask.a);
+    #elif defined(_MASKTEX_CHANNEL_A)
+        mask = half4(mask.a, mask.a, mask.a, mask.a);
+    #elif defined(_MASKTEX_CHANNEL_ALL)
+        // 保持原色
+		mask = half4(mask.rgb, mask.a);
+    #endif
+
+
 	half4 alphaMask = mask * _MaskTexColor;
 	col *= alphaMask;
 	col.a *= lerp(mask.r, mask.a, _MaskTexAorR);                                          //输出Alpha                                   
 #endif
 
-	// 深度计算
+// 深度计算
 #if _USE_SOFTPARTICLE
 
 	float2 screenPos = i.projPos.xy / i.projPos.w;
-	float sceneZ = tex2D(_CameraDepthTexture,screenPos).r;
+	float sceneZ = SAMPLE_TEXTURE2D(_CameraDepthTexture, sampler_CameraDepthTexture, screenPos).r;
 	float EyeD = LinearEyeDepth(sceneZ,_ZBufferParams);  
 
 
@@ -438,7 +564,7 @@ half4 frag(v2f i , half4 color)
 	col.a *= fade;
 #endif
 
-	// hsv
+// hsv
 #if _USE_CHANGECOLOR
 
 	half lum = (col.r + col.g + col.b)/3;
@@ -447,16 +573,26 @@ half4 frag(v2f i , half4 color)
 
 	col.rgb = _ChangeColor * lum;  
 #endif
-    col = pow(col, _Power);
+    col = pow(abs(col), _Power); 
+
+
 	return col;
 }
+
+
+
 
 //=========================================================   输出颜色 ========================================================================================
 
 half4 fragFront(v2f i) : SV_Target
 {
-    half4 col = frag(i, _Color);
-	//half4 col = frag(i);
+
+	_Color *= _Glowintensity;
+	half4 CustomColor = _Color * i.uv3.w; // 使用传入Custom控制强度
+
+
+    half4 col = frag(i, lerp(_Color, CustomColor, _UseCustomColor)); 
+
     return col;
 }
 #endif

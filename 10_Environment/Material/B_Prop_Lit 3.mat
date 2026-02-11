@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: B_Prop_Lit 3
+  m_Shader: {fileID: 4800000, guid: 0224dd17125e7394daa8b1856245831e, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: 57cfa8eea0b09df4db23a45c3eb6ec64, type: 3}
+        m_Scale: {x: 3, y: 3}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 2800000, guid: 63f7eb05726d3d24f8d3800d78ef0f91, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OverlayTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ReflectionCube:
+        m_Texture: {fileID: 8900000, guid: 7520d097f390ee244bb97e6072c1f0c7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _CameraFarFadeDistance: 2
+    - _CameraNearFadeDistance: 12.63
+    - _Cull: 2
+    - _FresnelPower: 1.46
+    - _GlassEffectOpacity: 0.847
+    - _MainTexIntensity: 0
+    - _MainTexOpacity: 0.427
+    - _NormalScale: 0.137
+    - _Opacity: 0.219
+    - _OverlayIntensity: 0.92
+    - _ReflectBlur: 0.256
+    - _ReflectHDRClamp: 3
+    - _ReflectIntensity: 0.19
+    - _RefractionStrength: 0.0354
+    - _Smoothness: 0.268
+    - _SoftParticlesFarFadeDistance: 4.84
+    - _SoftParticlesNearFadeDistance: -25.5
+    - _SpecularIntensity: 3.25
+    m_Colors:
+    - _BaseColor: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+    - _FresnelColor: {r: 0, g: 0.47009897, b: 1, a: 1}
+    - _OverlayColor: {r: 1, g: 1, b: 1, a: 0.4117647}
+    - _SpecularColor: {r: 0.2285066, g: 0.4866415, b: 0.745283, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

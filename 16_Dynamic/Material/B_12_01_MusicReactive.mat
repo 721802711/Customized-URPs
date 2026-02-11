@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: B_12_01_MusicReactive
+  m_Shader: {fileID: 4800000, guid: f98d333cb24cf0748895504e23bd13ac, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 3000
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _ColumnMaskTex:
+        m_Texture: {fileID: 2800000, guid: d2bfdc4812bf9c94a9f5eddd4df365d8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _GradientTex:
+        m_Texture: {fileID: 2800000, guid: d2df70329d194e343a3cb54125d4daf1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HeightTex:
+        m_Texture: {fileID: 2800000, guid: f71e31f1c0043b8499f704a193268508, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: f6e3e3694fbdf8a4f8ceb4a2232c1b30, type: 3}
+        m_Scale: {x: 5, y: 5}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: f71e31f1c0043b8499f704a193268508, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _AudioIntensity: 0.732
+    - _Beat: 0.508
+    - _BeatSpeed: 1
+    - _CellHeight: 0.586
+    - _CellWidth: 0.606
+    - _Columns: 30
+    - _CornerRadius: 0.087
+    - _DistortStrength: 0.111
+    - _DstBlend: 1
+    - _EmissionStrength: 5
+    - _GlobalMaskHeight: 0.71
+    - _HeightTexStrength: 0.798
+    - _MaskFeather: 0
+    - _NoiseAddScale: 1.097
+    - _NoiseScale: 22.3
+    - _NoiseSpeed: 15.2
+    - _NoiseSteps: 7.42
+    - _NoiseStrength: 0.327
+    - _NoiseThreshold: 0.121
+    - _Pixelation: 148
+    - _Randomize: 0.295
+    - _RectRadius: 0.369
+    - _RectSizeX: 0.699
+    - _RectSizeY: 0.416
+    - _RectSoft: 0.1347
+    - _RowMaskCut: 0.111
+    - _Rows: 30
+    - _Speed: 5.07
+    - _SrcBlend: 5
+    - _StepCount: 3
+    - _StepLevel: 45.2
+    - _StepSoft: 0.1057
+    - _StepStrength: 0.46
+    - _StepThreshold: 0.67
+    - _TileHeightScale: 0.607
+    - _TimeScale: 0.5
+    - _VPower: 9.74
+    - _VisibleRows: 18.3
+    - _WaveFrequency: 9.94
+    - _XCount: 1
+    - _YCount: 2
+    m_Colors:
+    - _BackgroundColor: {r: 0, g: 0, b: 0, a: 1}
+    - _BaseColor: {r: 2.6082366, g: 0.110726975, b: 0.110726975, a: 1}
+    - _BottomColor: {r: 0, g: 0, b: 3.1867363, a: 1}
+    - _ColorA: {r: 1, g: 0.6, b: 0.6, a: 1}
+    - _ColorB: {r: 1, g: 0.19999996, b: 1, a: 1}
+    - _ForegroundColor: {r: 1, g: 1, b: 1, a: 1}
+    - _NoiseSpeed: {r: 0, g: -1, b: 0.1, a: 0.1}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
+    - _TileScale: {r: 1, g: 1, b: 0, a: 0}
+    - _TopColor: {r: 0, g: 2.6390157, b: 0.8684526, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1

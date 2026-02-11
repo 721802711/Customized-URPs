@@ -34,10 +34,11 @@ Material:
     m_Ints: []
     m_Floats:
     - _DstBlend: 10
-    - _Flowx: 0.3
+    - _Flowx: 0.94
     - _Flowy: 0
     - _SrcBlend: 5
     - _cull: 0
     m_Colors:
     - _Dir: {r: 0, g: 1, b: 0, a: 0}
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

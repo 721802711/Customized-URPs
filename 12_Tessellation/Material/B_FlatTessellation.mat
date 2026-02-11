@@ -26,7 +26,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _HeightMap:
-        m_Texture: {fileID: 2800000, guid: bd7fde3e7013fc54bb0361b2970899a7, type: 3}
+        m_Texture: {fileID: 2800000, guid: b49b9aa85349114489d64d9a110d771e, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -42,3 +42,4 @@ Material:
     - _Partitioning: 2
     m_Colors: []
   m_BuildTextureStacks: []
+  m_AllowLocking: 1

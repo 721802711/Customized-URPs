@@ -1,12 +1,20 @@
-Shader "11_15_Particle"
+Shader "DFW/Effect/Particle"
 {
     Properties
     {
 		//基础
 		[HDR]_Color ("颜色", Color) = (1, 1, 1, 1)
+		[MaterialToggle]_UseCustomColor("使用Custom控制强度变化", float) = 0
 		_Glowintensity ("发光强度", Range(1, 10)) = 1         // 发光强度
 		_Alpha ("Alpha", Range(0, 5)) = 1
         _MainTex ("纹理", 2D) = "white" {}
+
+		_MainTexWrap("主贴图 WrapMode (U,V)", Vector) = (0,0,0,0)
+
+		// 使用 KeywordEnum 定义通道
+		[KeywordEnum(All, R, G, B, A)]
+        _MainTex_Channel("MainTex_Channel", Float) = 0
+
 		[MaterialToggle]_AorR("使用R当Alpha通道", float) = 0
 		_Power("对比度",Range(1.0, 10)) = 1
 
@@ -18,6 +26,9 @@ Shader "11_15_Particle"
 		[Header(Soft Particle)]
 		[Toggle(_USE_SOFTPARTICLE)]_Toggle_USE_SOFTPARTICLE_ON("软粒子", float) = 0
 		_SoftFade ("柔和度", Range(0.01, 30)) = 1.0
+
+		[Toggle(_USE_CUSTOM2_MAINUV)] _UseCustom2MainUV ("UseCustom2MainUV", Float) = 0  // 新增属性，控制是否使用 Custom2 作为主贴图 UV 偏移
+
 		//UV速度
 		[Header(UV speed)]
 		_UV_Speed_U_Main ("纹理U方向速度", float) = 0
@@ -40,7 +51,15 @@ Shader "11_15_Particle"
 
 		//遮罩
 		[Header(Mask)]
-		[Toggle(_USE_MASK)]_USE_MASK("遮罩纹理", float) = 0
+		[Toggle(_USE_MASK)]_USE_MASK("遮罩纹理", float) = 0 
+		// 使用 KeywordEnum 定义通道
+		[KeywordEnum(All, R, G, B, A)]
+        _MaskTex_Channel("MaskTex_Channel", Float) = 0
+
+		_MaskTexWrap("遮罩贴图 WrapMode (U,V)", Vector) = (0,0,0,0)
+
+
+
 		_MaskTex ("遮罩纹理", 2D) = "white" {}
 		[MaterialToggle]_MaskTexAorR("使用R当Alpha通道", float) = 0
 		[MaterialToggle]_MaskUV_one("UV循环或者一次性", float) = 0
@@ -62,6 +81,8 @@ Shader "11_15_Particle"
 		[MaterialToggle] _MaskUvOffsetMain("遮罩UV偏移", float) = 0
 		_MaskUvOffset("遮罩UV偏移系数",Range(0,5))=0
 
+		[MaterialToggle]_MaskDistort("遮罩开启扭曲", float) = 0
+		_MaskDistortStrength ("遮罩扭曲强度", Range(0,1)) = 0.1
 
 		//扭曲
 		[Header(Distort)]
@@ -94,9 +115,10 @@ Shader "11_15_Particle"
 		_DissolveStrength ("溶解度", Range(0, 1)) = 0
 		[HDR]_DissolveColor ("溶解边缘颜色", Color) = (1, 1, 1, 1)
 		_DissolveWidth ("溶解边缘宽度", Range(0, 1)) = 0 
-		_DissolveSmooth ("边缘硬度", Range(0, 1)) = 0 
+		_DissolveSmooth ("边缘硬度", Range(0, 10)) = 0 
 
-
+		_Dissolve_Speed_U ("溶解纹理U方向速度", float) = 0
+		_Dissolve_Speed_V ("溶解纹理V方向速度", float) = 0
 
 		//整体调色
 		[Header(ChangeColor)]
@@ -144,6 +166,15 @@ Shader "11_15_Particle"
 			#pragma shader_feature _USE_SECONDARYTEX            // 副纹理
 			#pragma multi_compile __ _UNITY_RENDER
 			
+
+			#pragma shader_feature_local _USE_CUSTOM2_MAINUV    // 新增Custom2控制主贴图UV
+
+
+			// 贴图通道关键字	
+			#pragma multi_compile _MAINTEX_CHANNEL_ALL _MAINTEX_CHANNEL_R _MAINTEX_CHANNEL_G _MAINTEX_CHANNEL_B _MAINTEX_CHANNEL_A
+			#pragma multi_compile _MASKTEX_CHANNEL_ALL _MASKTEX_CHANNEL_R _MASKTEX_CHANNEL_G _MASKTEX_CHANNEL_B _MASKTEX_CHANNEL_A
+
+
 			#include "HLSLEffectParticleLibrary.hlsl"
 
             ENDHLSL
